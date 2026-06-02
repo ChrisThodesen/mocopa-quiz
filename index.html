@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="British Gas MOCOPA electrical assessment practice quiz">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./styles.css">
+  <title>BG MOCOPA Quiz</title>
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <header class="app-header" role="banner">
+      <h1>BG MOCOPA Practice Quiz</h1>
+      <p class="subtitle">⚡ Electrical Assessment Training (v2)⚡</p>
+    </header>
+
+    <section id="progressSection" aria-label="Quiz progress" style="display:none">
+      <div class="progress-meta">
+        <span class="progress-label" id="progressText" aria-live="polite">Question 1 of 50</span>
+        <span id="modeBadge" class="mode-badge"></span>
+      </div>
+      <div class="progress-track" role="progressbar" aria-labelledby="progressText" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </section>
+
+    <main id="quizCard" class="quiz-card fade-in" aria-live="polite"></main>
+
+  </div>
+
+  <script src="./questions.js?v=4"></script>
+  <script src="./quiz.js?v=2"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
+</body>
+</html>
