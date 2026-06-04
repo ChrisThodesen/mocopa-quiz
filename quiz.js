@@ -181,8 +181,8 @@ function selectAnswer(button, index) {
     // Practice mode: reveal correct/wrong immediately
     buttons.forEach((btn, i) => {
       btn.disabled = true;
-      if (i === correctIndex) btn.classList.add("correct");
-      else if (i === index) btn.classList.add("wrong");
+      if (i === correctIndex) btn.classList.add("correct","anim-correct");
+      else if (i === index) btn.classList.add("wrong","anim-wrong");
     });
 
     const feedback = document.getElementById("feedback");
