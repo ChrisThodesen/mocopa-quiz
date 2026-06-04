@@ -1,0 +1,25 @@
+{
+  "subjects": 
+  [
+    {
+      "subject": "MOCOPA",
+      "exams": [
+        { 
+          "id": "mocopa", 
+          "label": "Electrical Assessment",
+          "file": "data/mocopa.json"
+        }
+      ]
+    },
+    {
+      "subject": "ACS",
+      "exams": [
+        {
+          "id": "acs-hse",
+          "label": "HSE",
+          "file": "data/acs-hse.json"
+        }
+      ]
+    }
+  ]
+}
