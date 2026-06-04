@@ -31,7 +31,7 @@ answers: ["Resistance","Voltage","Power","Water Pressure"],
 correct: 0
 },
 {
-question: "Which of the following documents is non Statutory?",
+question: "Which of the following documents is non-statutory?",
 answers: ["Health and Safety at work Act","The Electricity at Work Regulations 1989","GS38 Document","Building Regs"],
 correct: 2
 },
@@ -76,7 +76,7 @@ answers: ["50A-75A","240A","100mA","50–80mA"],
 correct: 3
 },
 {
-question: "Electric at work Regulations are a statutory Document",
+question: "Electric at work Regulations are a statutory document",
 answers: ["True","False"],
 correct: 0
 },
@@ -523,7 +523,7 @@ question: "We check polarity at the incoming side of the cut out with what tool?
 answers: [
 "Non contact voltage detector",
 "Contact voltage detector",
-"Multmeter",
+"Multimeter",
 "ELI tester"
 ],
 correct: 1
@@ -610,7 +610,7 @@ question: "What is an earth bond to a gas pipe called?",
 answers: [
   "Protective Equipotential Bond",
   "Main Earthing Conductor",
-  "Supplimentary Bonding Conductor",
+  "Supplementary Bonding Conductor",
   "Anti Explosive Earthing"
 ],
 correct: 0
@@ -650,7 +650,7 @@ question: "What do we do when the fuse box is in an area away from the meter ins
 answers: [
   "Tell the customer not to touch it",
   "Do the work live",
-  "As for another engineer to guard the fuse box",
+  "Ask for another engineer to guard the fuse box",
   "Use a lock off kit and padlock with a warning sign"
 ],
 correct: 3
@@ -696,7 +696,7 @@ answers: [
 correct: 2
 },
 {
-question: "Beofre turning off a customers supply what must we do?",
+question: "Before turning off a customers supply what must we do?",
 answers: [
   "Call the DNO",
   "Confirm an RCD has been installed",
@@ -796,7 +796,7 @@ answers: [
 correct: 2
 },
 {
-question: "Which of these is a statuatory document?",
+question: "Which of these is a statutory document?",
 answers: [
   "IEE on-site-guide",
   "Guidance note 3",
@@ -806,7 +806,7 @@ answers: [
 correct: 3
 },
 {
-question: "Which of these is a non-statuatory document?",
+question: "Which of these is a non-statutory document?",
 answers: [
   "Electricity at Work Regulations 1989",
   "The Health and Safety at Work Act",
