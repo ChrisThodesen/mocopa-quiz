@@ -1,24 +1,85 @@
-/* ── Reset & Base ─────────────────────────────────────────────────────────── */
+/* ── Reset ─────────────────────────────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* ── Dark mode ─────────────────────────────────────────── */
 :root {
-  --bg-page:        #0f2067; /* was #0f172a */
-  --bg-card:        #1e293b;
-  --bg-answer:      #0d1b2a;
-  --bg-hover:       #162235;
+  /* British Gas brand palette */
+  --bg-page:        #060e35;
+  --bg-card:        #152060;
+  --bg-answer:      #0a1448;
+  --bg-hover:       #111d6a;
   --color-correct:  #22c55e;
   --color-wrong:    #ef4444;
-  --color-accent:   #3b82f6;
+  --color-accent:   #00A9CE;
   --color-text:     #f1f5f9;
   --color-muted:    #94a3b8;
-  --color-border:   #334155;
+  --color-border:   #1e3285;
+  --color-question: #bbbbbb;
+  --badge-test:     #facc1540;
+  --badge-practice: #60a5fa40;
   --radius-card:    16px;
   --radius-btn:     10px;
 }
+
+/* ── Light mode ─────────────────────────────────────────── */
+[data-theme="light"] {
+  --bg-page:        #e8f4f8;
+  --bg-card:        #0f2067;
+  --bg-answer:      #1a2f7a;
+  --bg-hover:       #162570;
+  --color-correct:  #16a34a;
+  --color-wrong:    #dc2626;
+  --color-accent:   #0078a0;
+  --color-text:     #f1f5f9;
+  --color-muted:    #a8c8d8;
+  --color-border:   #2a3f9f;
+  --color-heading:  #0f2067;
+  --color-subtitle: #2a4080;
+  --color-question: #555;
+  --badge-test:     #bb9a18;
+  --badge-practice: #487cbd;
+  --radius-card:    16px;
+  --radius-btn:     10px;
+}
+
+[data-theme="light"] .app-header h1 {
+  color: var(--color-heading);
+}
+
+[data-theme="light"] .app-header .subtitle {
+  color: var(--color-subtitle);
+}
+
+/* ── Theme toggle button ─────────────────────────────────── */
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background: rgba(0,0,0,0.25);
+  border: 1.5px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-muted);
+  font-size: 18px;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+  z-index: 100;
+}
+
+.theme-toggle:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* ── Base ─────────────────────────────────────────────────────────── */
 
 html {
   -webkit-text-size-adjust: 100%;
@@ -48,12 +109,11 @@ body {
 .app-header {
   width: 100%;
   max-width: 600px;
-  padding: 24px 20px 0;
   text-align: center;
 }
 
 .app-header h1 {
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 700;
   color: #60a5fa;
   letter-spacing: 0.02em;
@@ -81,7 +141,7 @@ body {
 
 .progress-label {
   font-size: 14px;
-  color: var(--color-muted);
+  color: var(--color-question);
 }
 
 .mode-badge {
@@ -94,13 +154,13 @@ body {
 }
 
 .badge-practice {
-  background: rgba(59, 130, 246, 0.15);
-  color: #60a5fa;
+  background: var(--badge-practice);
+  color: var(--color-text);
 }
 
 .badge-test {
-  background: rgba(234, 179, 8, 0.15);
-  color: #facc15;
+  background: var(--badge-test);
+  color: var(--color-text);
 }
 
 .progress-track {

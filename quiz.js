@@ -289,5 +289,12 @@ function showResults() {
   `;
 }
 
+// ── Theme toggle ───────────────────────────────────────────
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute("data-theme") !== "light";
+  document.documentElement.setAttribute("data-theme", isDark ? "light" : "dark");
+  document.querySelector(".theme-toggle").textContent = isDark ? "🌙" : "☀️";
+}
+
 // ── Boot ──────────────────────────────────────────────────────────────────────
 showStartScreen();
