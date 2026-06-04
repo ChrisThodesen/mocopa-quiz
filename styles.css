@@ -6,7 +6,7 @@
 }
 
 :root {
-  --bg-page:        #0f172a;
+  --bg-page:        #0f2067; /* was #0f172a */
   --bg-card:        #1e293b;
   --bg-answer:      #0d1b2a;
   --bg-hover:       #162235;
@@ -26,7 +26,7 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: 'BritishGasBody','Helvetica','Arial', sans-serif;
   background: var(--bg-page);
   color: var(--color-text);
   min-height: 100dvh;
@@ -402,7 +402,7 @@ body {
   fill: none;
   stroke-width: 10;
   stroke-linecap: round;
-  transition: stroke-dashoffset 0.8s ease;
+  transition: stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .ring-pass { stroke: var(--color-correct); }
@@ -574,3 +574,22 @@ body {
     margin-top: 8px;
   }
 }
+
+/* ── Animations ─────────────────────────────────────────── */
+@keyframes correctPulse {
+  0%   { transform: scale(1); }
+  35%  { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+@keyframes wrongShake {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-6px); }
+  40%  { transform: translateX(5px); }
+  60%  { transform: translateX(-3px); }
+  80%  { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}
+
+.answer-btn.anim-correct { animation: correctPulse 0.4s ease both; }
+.answer-btn.anim-wrong   { animation: wrongShake 0.35s ease both; }
