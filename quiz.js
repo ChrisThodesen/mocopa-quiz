@@ -20,7 +20,7 @@ function shuffle(array) {
   return array;
 }
 
-function prepareQuestions(questions) {
+function prepareQuestions(questions, count) {
   const prepared = questions.map(q => {
     const correctAnswer = q.answers[q.correct];
     const aoaIndex = q.answers.findIndex(a =>
@@ -34,10 +34,12 @@ function prepareQuestions(questions) {
     return {
       question: q.question,
       answers: shuffled,
-      correct: shuffled.indexOf(correctAnswer)
+      correct: shuffled.indexOf(correctAnswer),
+      explanation: q.explanation || ''
     };
   });
-  return shuffle(prepared);
+  const shuffled = shuffle(prepared);
+  return count ? shuffled.slice(0, count) : shuffled;
 }
 // ── Start screen ──────────────────────────────────────────────────────────────
 function showQuizSelector() {
@@ -116,7 +118,8 @@ function loadAndStart(mode) {
 
 function startQuiz(mode, questions) {
   testMode        = (mode === 'test');
-  quiz            = prepareQuestions(questions);
+  quiz            = prepareQuestions(questions, 
+    testMode ? currentQuiz.testCount : currentQuiz.practiceCount);
   current         = 0;
   score           = 0;
   wrongAnswers    = [];
@@ -337,7 +340,7 @@ themeSwitch.addEventListener('change', function () {
 
 // Restore saved preference on load
 const savedTheme = localStorage.getItem('theme');
-applyTheme(savedTheme === 'dark');
+applyTheme(savedTheme === null ? true : savedTheme === 'dark');
 
 // ── Boot ──────────────────────────────────────────────────────────────────────
 showQuizSelector();
