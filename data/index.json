@@ -1,21 +1,22 @@
-{
-  "subjects": 
-  [
-    {
+[
+  {
     "id": "mocopa",
     "title": "MOCOPA Exam",
     "subtitle": "Metering Operations & Competency Assessment",
     "icon": "⚡",
     "file": "./data/mocopa.json",
-    "passmark": 80
-    },
-    {
-      "id": "risk-classification",
-      "title": "AR / HR Risk Classification",
-      "subtitle": "At Risk & Immediately Dangerous situations",
-      "icon": "⚠️",
-      "file": "./data/risk-classification.json",
-      "passmark": 80
-    }
-  ]
-}
+    "passmark": 80,
+    "practiceCount": 20,
+    "testCount": 60
+  },
+  {
+    "id": "risk-classification",
+    "title": "AR / HR Risk Classification",
+    "subtitle": "At Risk & Immediately Dangerous situations",
+    "icon": "⚠️",
+    "file": "./data/risk-classification.json",
+    "passmark": 80,
+    "practiceCount": 15,
+    "testCount": 35
+  }
+]

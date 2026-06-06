@@ -1,4 +1,6 @@
 // ── State ─────────────────────────────────────────────────────────────────────
+let quizRegistry = [];
+let currentQuiz = null;
 let quiz = [];
 let current = 0;
 let score = 0;
@@ -18,8 +20,8 @@ function shuffle(array) {
   return array;
 }
 
-function prepareQuestions() {
-  quiz = QUESTIONS.map(q => {
+function prepareQuestions(questions) {
+  const prepared = questions.map(q => {
     const correctAnswer = q.answers[q.correct];
     const aoaIndex = q.answers.findIndex(a =>
       a.toLowerCase().includes("all of the above")
@@ -35,65 +37,98 @@ function prepareQuestions() {
       correct: shuffled.indexOf(correctAnswer)
     };
   });
-  shuffle(quiz);
+  return shuffle(prepared);
+}
+// ── Start screen ──────────────────────────────────────────────────────────────
+function showQuizSelector() {
+  document.getElementById('progressSection').style.display = 'none';
+  document.getElementById('quizSubtitle').textContent = '⚡ Smart Metering Apprenticeship Training ⚡';
+
+  const card = document.getElementById('quizCard');
+  card.className = 'quiz-card fade-in';
+
+  fetch('./data/index.json')
+    .then(r => r.json())
+    .then(registry => {
+      quizRegistry = registry;
+      console.log(registry);
+      card.innerHTML = `
+        <p class="quiz-select-title">Select a quiz</p>
+        <p class="quiz-select-desc">Choose a topic below, then select practice or test mode.</p>
+        <div class="quiz-list">
+          ${quizRegistry.map(q => `
+            <button class="quiz-card-btn" onclick="selectQuiz('${q.id}')">
+              <div class="quiz-card-icon">${q.icon}</div>
+              <div>
+                <div class="quiz-card-title">${q.title}</div>
+                <div class="quiz-card-subtitle">${q.subtitle}</div>
+              </div>
+            </button>
+          `).join('')}
+        </div>
+      `;
+    })
+    .catch((err) => {
+      console.error('Error loading quiz registry:', err);
+      card.innerHTML = `<p class="start-desc">Could not load quiz list. Please check data/index.json exists. ${err}</p>`;
+    });
 }
 
-// ── Start screen ──────────────────────────────────────────────────────────────
-function showStartScreen() {
-  document.getElementById("progressSection").style.display = "none";
+function selectQuiz(id) {
+  currentQuiz = quizRegistry.find(q => q.id === id);
+  showModeSelector();
+}
 
-  const card = document.getElementById("quizCard");
-  card.classList.remove("fade-in");
-  void card.offsetWidth;
-  card.classList.add("fade-in");
+function showModeSelector() {
+  const card = document.getElementById('quizCard');
+  card.className = 'quiz-card fade-in';
+  document.getElementById('quizSubtitle').textContent = currentQuiz.subtitle;
 
   card.innerHTML = `
-    <div class="start-screen">
-      <h2 class="start-title">Choose your mode</h2>
-      <p class="start-desc">Practice shows correct answers as you go.<br>Test mode hides them until the end.</p>
-      <div class="mode-btns">
-        <button class="mode-btn mode-practice" onclick="startQuiz(false)">
-          <span class="mode-icon">💡</span>
-          <span class="mode-label">Practice</span>
-          <span class="mode-hint">Answers revealed each question</span>
-        </button>
-        <button class="mode-btn mode-test" onclick="startQuiz(true)">
-          <span class="mode-icon">📝</span>
-          <span class="mode-label">Test</span>
-          <span class="mode-hint">Results at the end only</span>
-        </button>
-      </div>
+    <button class="back-btn" onclick="showQuizSelector()">&#8592; All quizzes</button>
+    <p class="selected-quiz-name">${currentQuiz.title}</p>
+    <div class="mode-btns">
+      <button class="mode-btn mode-practice" onclick="loadAndStart('practice')">
+        <span class="mode-icon">📝</span>
+        <span class="mode-label">Practice Mode</span>
+        <span class="mode-hint">Instant feedback after each answer</span>
+      </button>
+      <button class="mode-btn mode-test" onclick="loadAndStart('test')">
+        <span class="mode-icon">🎯</span>
+        <span class="mode-label">Test Mode</span>
+        <span class="mode-hint">Results revealed at the end — pass mark ${currentQuiz.passmark}%</span>
+      </button>
     </div>
   `;
 }
 
-function startQuiz(isTestMode) {
-  testMode = isTestMode;
-  current = 0;
-  score = 0;
-  answered = false;
-  wrongAnswers = [];
+function loadAndStart(mode) {
+  fetch(currentQuiz.file)
+    .then(r => r.json())
+    .then(questions => {
+      startQuiz(mode, questions);
+    })
+    .catch(err => {
+      console.error('Error loading quiz questions:', err);
+      alert('Could not load quiz questions. Please check the data file exists.');
+    });
+}
+
+function startQuiz(mode, questions) {
+  testMode        = (mode === 'test');
+  quiz            = prepareQuestions(questions);
+  current         = 0;
+  score           = 0;
+  wrongAnswers    = [];
   selectedAnswers = [];
+  answered        = false;
 
-  prepareQuestions();
-  quiz = quiz.slice(0, testMode ? 60 : 20);
+  const modeBadge = document.getElementById('modeBadge');
+  modeBadge.textContent = testMode ? 'Test' : 'Practice';
+  modeBadge.className   = 'mode-badge ' + (testMode ? 'badge-test' : 'badge-practice');
 
-  document.getElementById("progressSection").style.display = "block";
-  // Show mode badge in progress bar area
-  document.getElementById("modeBadge").textContent = testMode ? "Test mode" : "Practice mode";
-  document.getElementById("modeBadge").className = "mode-badge " + (testMode ? "badge-test" : "badge-practice");
-
-  const card = document.getElementById("quizCard");
-  card.innerHTML = `
-    <p id="questionText" class="question-text"></p>
-    <div id="answers" class="answers"></div>
-    <p id="feedback" class="feedback" style="display:none" aria-live="assertive"></p>
-    <button id="nextBtn" class="next-btn" onclick="nextQuestion()" style="display:none">
-      Continue <span aria-hidden="true">→</span>
-    </button>
-  `;
-
-  loadQuestion();
+  document.getElementById('progressSection').style.display = 'block';
+  renderQuestion();
 }
 
 // ── Rendering ─────────────────────────────────────────────────────────────────
@@ -104,40 +139,35 @@ function updateProgress() {
     `Question ${current + 1} of ${quiz.length}`;
 }
 
-function loadQuestion() {
+function renderQuestion() {
   answered = false;
 
-  const container = document.getElementById("quizCard");
-  container.classList.remove("fade-in");
-  void container.offsetWidth;
-  container.classList.add("fade-in");
+  const card = document.getElementById('quizCard');
+  card.className = 'quiz-card fade-in';
 
   const q = quiz[current];
-  document.getElementById("questionText").textContent = q.question;
+  updateProgress();
 
-  const answersDiv = document.getElementById("answers");
-  answersDiv.innerHTML = "";
+  card.innerHTML = `
+    <p class="question-text">${q.question}</p>
+    <div class="answers" id="answers"></div>
+    <div class="feedback" id="feedback" style="display:none"></div>
+    <button class="next-btn" id="nextBtn" style="display:none" onclick="nextQuestion()">
+      ${current < quiz.length - 1 ? 'Next question &#8594;' : 'See results'}
+    </button>
+  `;
 
+  const answersDiv = document.getElementById('answers');
   q.answers.forEach((answer, i) => {
-    const btn = document.createElement("button");
-    btn.className = "answer-btn";
-
-    const letter = document.createElement("span");
-    letter.className = "answer-letter";
-    letter.textContent = String.fromCharCode(65 + i);
-
-    const text = document.createElement("span");
-    text.className = "answer-text";
-    text.textContent = answer;
-
-    btn.appendChild(letter);
-    btn.appendChild(text);
-    btn.addEventListener("click", () => selectAnswer(btn, i));
+    const btn = document.createElement('button');
+    btn.className = 'answer-btn';
+    btn.innerHTML = `
+      <span class="answer-letter">${String.fromCharCode(65 + i)}</span>
+      <span class="answer-text">${answer}</span>
+    `;
+    btn.addEventListener('click', () => selectAnswer(btn, i));
     answersDiv.appendChild(btn);
   });
-
-  document.getElementById("nextBtn").style.display = "none";
-  updateProgress();
 }
 
 function selectAnswer(button, index) {
@@ -225,8 +255,7 @@ const selected = selectedAnswers[current];
   
   current++;
   if (current < quiz.length) {
-    loadQuestion();
-    document.getElementById("feedback").style.display = "none";
+    renderQuestion();
   } else {
     showResults();
   }
@@ -235,7 +264,8 @@ const selected = selectedAnswers[current];
 // ── Results ───────────────────────────────────────────────────────────────────
 function showResults() {
   const percent = Math.round((score / quiz.length) * 100);
-  const pass = percent >= PASS_THRESHOLD;
+  const passmark = currentQuiz ? currentQuiz.passmark : 80;
+  const pass     = percent >= passmark;
 
   const card = document.getElementById("quizCard");
   card.classList.remove("fade-in");
@@ -275,7 +305,7 @@ function showResults() {
       </div>
 
       <p class="result-detail">${score} / ${quiz.length} correct</p>
-      <p class="result-threshold">Pass mark: ${PASS_THRESHOLD}%</p>
+      <p class="result-threshold">Pass mark: ${passmark}%</p>
 
       ${wrongAnswers.length > 0 ? `
         <div class="review-section">
@@ -284,7 +314,8 @@ function showResults() {
         </div>
       ` : '<p class="perfect">Perfect score! Well done. 🎉</p>'}
 
-      <button class="restart-btn" onclick="showStartScreen()">Choose mode &amp; restart</button>
+      <button class="restart-btn" onclick="showModeSelector()">Try again</button>
+      <button class="restart-btn" onclick="showQuizSelector()" style="margin-top:8px">Choose a different quiz</button>
     </div>
   `;
 }
@@ -309,4 +340,4 @@ const savedTheme = localStorage.getItem('theme');
 applyTheme(savedTheme === 'dark');
 
 // ── Boot ──────────────────────────────────────────────────────────────────────
-showStartScreen();
+showQuizSelector();

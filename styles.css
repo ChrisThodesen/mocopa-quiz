@@ -705,6 +705,106 @@ header p.subtitle {
   }
 }
 
+/* ── Quiz selector ───────────────────────────────────────────────────────────── */
+.quiz-select-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 6px;
+}
+
+.quiz-select-desc {
+  font-size: 14px;
+  color: var(--color-muted);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.quiz-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quiz-card-btn {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  align-items: center;
+  column-gap: 14px;
+  width: 100%;
+  padding: 18px 16px;
+  background: var(--bg-answer);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-btn);
+  color: var(--color-text);
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.quiz-card-btn:hover {
+  background: var(--bg-hover);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.quiz-card-btn:active {
+  transform: scale(0.98);
+}
+
+.quiz-card-icon {
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz-card-title {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 3px;
+}
+
+.quiz-card-subtitle {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+/* ── Mode select back button ─────────────────────────────────────────────────── */
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: var(--color-muted);
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0 0 16px 0;
+  transition: color 0.15s;
+}
+
+.back-btn:hover {
+  color: var(--color-accent);
+}
+
+.selected-quiz-label {
+  font-size: 13px;
+  color: var(--color-muted);
+  margin-bottom: 6px;
+}
+
+.selected-quiz-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 20px;
+}
+
 /* ── Animations ─────────────────────────────────────────── */
 @keyframes correctPulse {
   0%   { transform: scale(1); }
