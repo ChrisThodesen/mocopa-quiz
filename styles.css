@@ -315,6 +315,7 @@ header p.subtitle {
 .answer-btn:hover:not(:disabled) {
   background: var(--bg-hover);
   border-color: var(--color-accent);
+  transform: translateX(4px);
 }
 
 .answer-btn:active:not(:disabled) {
@@ -387,19 +388,19 @@ header p.subtitle {
 }
 
 .correct-feedback {
-  background: rgba(34, 197, 94, 0.1);
-  color: #4ade80;
+  background: rgba(101, 230, 148, 0.75);
+  color: #073f1b;
   border-left: 3px solid var(--color-correct);
 }
 
 .wrong-feedback {
-  background: rgba(239, 68, 68, 0.1);
-  color: #f87171;
+  background: rgba(235, 116, 116, 0.75);
+  color: #4e0909;
   border-left: 3px solid var(--color-wrong);
 }
 
 .neutral-feedback {
-  background: rgba(148, 163, 184, 0.08);
+  background: rgba(148, 163, 184, 0.75);
   color: var(--color-muted);
   border-left: 3px solid var(--color-muted);
 }
@@ -619,13 +620,13 @@ header p.subtitle {
 
 .review-wrong {
   font-size: 13px;
-  color: #f87171;
+  color: #860d0d;
   margin-bottom: 4px;
 }
 
 .review-correct {
   font-size: 13px;
-  color: #4ade80;
+  color: #088435;
 }
 
 /* ── Restart button ──────────────────────────────────────────────────────────── */
@@ -690,6 +691,7 @@ header p.subtitle {
   .answer-btn {
     font-size: 14px;
     padding: 12px 12px;
+    transition: background 0.15s, border-color 0.15s, transform 0.1s;
   }
 
   .answers {
@@ -831,3 +833,4 @@ html.transition *::after {
   transition: background 420ms ease, color 420ms ease, border-color 420ms ease !important;
   transition-delay: 0s !important;
 }
+
