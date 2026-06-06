@@ -16,9 +16,13 @@
   <div class="app-layout">
 
     <header class="app-header" role="banner">
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">☀️</button>
-      <h1>BG MOCOPA Practice Quiz</h1>
-      <p class="subtitle">⚡ Electrical Assessment Training (v3)⚡</p>
+      <div class="theme-toggle-wrap">
+        <input class="theme-toggle-input" type="checkbox" id="themeSwitch" name="mode">
+        <label for="themeSwitch">Toggle light/dark mode</label>
+        </div>
+      <img src="./assets/logo.svg" class="header-logo" alt="British Gas" />
+      <div class="badge-text badge">Exam Prep</div>
+      <p id="quizSubtitle" class="subtitle">⚡ Smart Metering Apprenticeship Training ⚡</p>
     </header>
 
     <section id="progressSection" aria-label="Quiz progress" style="display:none">

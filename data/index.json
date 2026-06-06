@@ -2,24 +2,20 @@
   "subjects": 
   [
     {
-      "subject": "MOCOPA",
-      "exams": [
-        { 
-          "id": "mocopa", 
-          "label": "Electrical Assessment",
-          "file": "data/mocopa.json"
-        }
-      ]
+    "id": "mocopa",
+    "title": "MOCOPA Exam",
+    "subtitle": "Metering Operations & Competency Assessment",
+    "icon": "⚡",
+    "file": "./data/mocopa.json",
+    "passmark": 80
     },
     {
-      "subject": "ACS",
-      "exams": [
-        {
-          "id": "acs-hse",
-          "label": "HSE",
-          "file": "data/acs-hse.json"
-        }
-      ]
+      "id": "risk-classification",
+      "title": "AR / HR Risk Classification",
+      "subtitle": "At Risk & Immediately Dangerous situations",
+      "icon": "⚠️",
+      "file": "./data/risk-classification.json",
+      "passmark": 80
     }
   ]
 }

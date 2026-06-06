@@ -290,11 +290,23 @@ function showResults() {
 }
 
 // ── Theme toggle ───────────────────────────────────────────
-function toggleTheme() {
-  const isDark = document.documentElement.getAttribute("data-theme") !== "light";
-  document.documentElement.setAttribute("data-theme", isDark ? "light" : "dark");
-  document.querySelector(".theme-toggle").textContent = isDark ? "🌙" : "☀️";
+const themeSwitch = document.querySelector('input[name=mode]');
+
+function applyTheme(dark) {
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  themeSwitch.checked = dark;
+  localStorage.setItem('theme', dark ? 'dark' : 'light');
 }
+
+themeSwitch.addEventListener('change', function () {
+  document.documentElement.classList.add('transition');
+  setTimeout(() => document.documentElement.classList.remove('transition'), 1000);
+  applyTheme(this.checked);
+});
+
+// Restore saved preference on load
+const savedTheme = localStorage.getItem('theme');
+applyTheme(savedTheme === 'dark');
 
 // ── Boot ──────────────────────────────────────────────────────────────────────
 showStartScreen();

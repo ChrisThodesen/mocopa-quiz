@@ -8,17 +8,23 @@
 /* ── Dark mode ─────────────────────────────────────────── */
 :root {
   /* British Gas brand palette */
-  --bg-page:        #060e35;
-  --bg-card:        #152060;
+  --bg-page:        #232429;
+  --bg-card:        #003F5C;
   --bg-answer:      #0a1448;
   --bg-hover:       #111d6a;
+  --bg-header-text: #001F52;
   --color-correct:  #22c55e;
   --color-wrong:    #ef4444;
-  --color-accent:   #00A9CE;
+  --color-accent:   #86c3ff;
   --color-text:     #f1f5f9;
   --color-muted:    #94a3b8;
   --color-border:   #1e3285;
   --color-question: #bbbbbb;
+  --header-bar-1:   #a72323;
+  --header-bar-2:   #f09368;
+  --header-bar-3:   #e5adad;
+  --header-badge:   #ff6b1a;
+  --badge-text:     #fff;
   --badge-test:     #facc1540;
   --badge-practice: #60a5fa40;
   --radius-card:    16px;
@@ -28,18 +34,24 @@
 /* ── Light mode ─────────────────────────────────────────── */
 [data-theme="light"] {
   --bg-page:        #e8f4f8;
-  --bg-card:        #0f2067;
-  --bg-answer:      #1a2f7a;
-  --bg-hover:       #162570;
+  --bg-card:        #fff;
+  --bg-answer:      #dee3f0;
+  --bg-hover:       #d9ddf3;
+  --bg-header-text: #001F52;
   --color-correct:  #16a34a;
   --color-wrong:    #dc2626;
-  --color-accent:   #0078a0;
-  --color-text:     #f1f5f9;
-  --color-muted:    #a8c8d8;
-  --color-border:   #2a3f9f;
+  --color-accent:   #86c3ff;
+  --color-text:     #0f2067;
+  --color-muted:    #295970;
+  --color-border:   #a7afda;
   --color-heading:  #0f2067;
   --color-subtitle: #2a4080;
   --color-question: #555;
+  --header-bar-1:   #a72323;
+  --header-bar-2:   #f09368;
+  --header-bar-3:   #e5adad;
+  --header-badge:   #ff6b1a;
+  --badge-text:     #fff;
   --badge-test:     #bb9a18;
   --badge-practice: #487cbd;
   --radius-card:    16px;
@@ -55,30 +67,63 @@
 }
 
 /* ── Theme toggle button ─────────────────────────────────── */
-.theme-toggle {
-  position: fixed;
-  top: 16px;
+.theme-toggle-wrap {
+  position: absolute;
+  top: 14px;
   right: 16px;
-  background: rgba(0,0,0,0.25);
-  border: 1.5px solid var(--color-border);
-  border-radius: 999px;
-  color: var(--color-muted);
-  font-size: 18px;
-  width: 38px;
-  height: 38px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 6px;
+  z-index: 10;
+}
+
+.toggle-sun,
+.toggle-moon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.theme-toggle-input {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.theme-toggle-wrap label {
   cursor: pointer;
-  transition: border-color 0.15s, color 0.15s;
-  z-index: 100;
+  text-indent: -9999px;
+  width: 52px;
+  height: 28px;
+  background: #1C58BA;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: 2px solid #fff;
+  transition: background 0.3s;
 }
 
-.theme-toggle:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
+.theme-toggle-wrap label:after {
+  content: '';
+  background: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) 320ms;
 }
 
+.theme-toggle-input:checked + label {
+  background: var(--color-accent);
+}
+
+.theme-toggle-input:checked + label:after {
+  left: calc(100% - 3px);
+  transform: translateX(-100%);
+}
 /* ── Base ─────────────────────────────────────────────────────────── */
 
 html {
@@ -106,23 +151,55 @@ body {
 }
 
 /* ── Header ─────────────────────────────────────────────────────────────────── */
-.app-header {
+header {
+  position: relative;
   width: 100%;
-  max-width: 600px;
+  background: var(--color-accent);
+  color: var(--bg-header-text);
+  padding: 28px 24px 22px;
   text-align: center;
+  overflow: hidden;
 }
 
-.app-header h1 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #60a5fa;
-  letter-spacing: 0.02em;
+header::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, 
+  var(--header-bar-1),
+  var(--header-bar-2),
+  var(--header-bar-3),
+  var(--header-bar-2),
+  var(--header-bar-1));
 }
 
-.app-header .subtitle {
+.header-logo {
+  position: relative;
+  max-height: 64px;
+}
+
+header .badge {
+  display: block;
+  margin: 4px auto;
+  border-radius: 2px;
+  width: 112px;
+  background: var(--header-badge);
+  color: var(--badge-text);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 2px 0;
+}
+
+header p.subtitle {
+  display: inline-block;
   font-size: 14px;
-  color: var(--color-muted);
-  margin-top: 5px;
+  margin: 12px auto;
+  font-weight: bold;
+  color: var(--bg-header-text);
 }
 
 /* ── Progress ────────────────────────────────────────────────────────────────── */
@@ -572,13 +649,6 @@ body {
   background: rgba(59, 130, 246, 0.1);
 }
 
-/* ── Desktop padding ────────────────────────────────────────────────────────── */
-@media (min-width: 601px) {
-  body {
-    padding-top: 32px;
-  }
-}
-
 /* ── Card — mobile (fixed to bottom) ─────────────────────────────────────────── */
 @media (max-width: 600px) {
   .app-layout {
@@ -653,3 +723,11 @@ body {
 
 .answer-btn.anim-correct { animation: correctPulse 0.4s ease both; }
 .answer-btn.anim-wrong   { animation: wrongShake 0.35s ease both; }
+
+html.transition,
+html.transition *,
+html.transition *::before,
+html.transition *::after {
+  transition: background 420ms ease, color 420ms ease, border-color 420ms ease !important;
+  transition-delay: 0s !important;
+}
