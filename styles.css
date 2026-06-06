@@ -390,19 +390,19 @@ header p.subtitle {
 .correct-feedback {
   background: rgba(101, 230, 148, 0.75);
   color: #073f1b;
-  border-left: 3px solid var(--color-correct);
+  border-left: 6px solid #44835a;;
 }
 
 .wrong-feedback {
   background: rgba(235, 116, 116, 0.75);
   color: #4e0909;
-  border-left: 3px solid var(--color-wrong);
+  border-left: 6px solid #8f4c4c;
 }
 
 .neutral-feedback {
   background: rgba(148, 163, 184, 0.75);
   color: var(--color-muted);
-  border-left: 3px solid var(--color-muted);
+  border-left: 6px solid var(--color-border);
 }
 
 /* ── Next button ─────────────────────────────────────────────────────────────── */
@@ -532,7 +532,7 @@ header p.subtitle {
 
 .ring-bg {
   fill: none;
-  stroke: var(--color-border);
+  stroke: #1b2138;
   stroke-width: 10;
 }
 
@@ -590,7 +590,7 @@ header p.subtitle {
 .review-section {
   width: 100%;
   margin-top: 8px;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid #7a8ee6;
   padding-top: 16px;
 }
 
@@ -604,11 +604,12 @@ header p.subtitle {
 }
 
 .review-item {
-  background: rgba(255,255,255,0.04);
+  background: rgb(24, 24, 56);
+  color: #a3b5ff;
   border-radius: 8px;
   padding: 12px 14px;
   margin-bottom: 10px;
-  border-left: 3px solid var(--color-border);
+  border-left: 6px solid #606faf;
 }
 
 .review-question {
@@ -620,13 +621,13 @@ header p.subtitle {
 
 .review-wrong {
   font-size: 13px;
-  color: #860d0d;
+  color: #ce1313;
   margin-bottom: 4px;
 }
 
 .review-correct {
   font-size: 13px;
-  color: #088435;
+  color: #0cc550;
 }
 
 /* ── Restart button ──────────────────────────────────────────────────────────── */
