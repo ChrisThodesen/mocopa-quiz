@@ -2,7 +2,7 @@
   {
     "id": "mocopa",
     "title": "MOCOPA Exam",
-    "subtitle": "Metering Operations & Competency Assessment",
+    "subtitle": "MOCOPA Assessment Practice",
     "icon": "⚡",
     "file": "./data/mocopa.json",
     "passmark": 80,
@@ -12,7 +12,7 @@
   {
     "id": "risk-classification",
     "title": "AR / HR Risk Classification",
-    "subtitle": "At Risk & Immediately Dangerous situations",
+    "subtitle": "Risk Classification Practice",
     "icon": "⚠️",
     "file": "./data/risk-classification.json",
     "passmark": 80,

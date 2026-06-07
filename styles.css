@@ -7,63 +7,85 @@
 
 /* ── Dark mode ─────────────────────────────────────────── */
 :root {
-  /* British Gas brand palette */
-  --bg-page:        #232429;
-  --bg-card:        #003F5C;
-  --bg-answer:      #0a1448;
-  --bg-hover:       #111d6a;
-  --bg-header-text: #001F52;
-  --color-correct:  #22c55e;
-  --color-wrong:    #ef4444;
-  --color-accent:   #86c3ff;
-  --color-text:     #f1f5f9;
-  --color-muted:    #94a3b8;
-  --color-border:   #1e3285;
-  --color-question: #bbbbbb;
+  
+  --radius-card:    16px;
+  --radius-btn:     10px;
+
+  /* main branding colours */
+  --bg-cyan:      #86c3ff;
+  --bg-blue:      #2563eb;
+  --bg-navy:      #0f2067;
+
+  /* theme specific colours */
+  --colour-bg:         #232429;
+  --colour-card:       #003F5C;
+  --colour-h1:         #001F52;
+  --colour-text:       #f1f5f9;
+  --colour-text-muted: #94a3b8;
+  --colour-answer-btn: #0a1448;
+  --colour-accent:     #86c3ff;
+  --colour-border:     #1e3285;
+  --colour-correct:    #22c55e;
+  --colour-wrong:      #ef4444;
+  --colour-badge-header:  #ff6b1a;
+  --colour-badge-test:    #facc1540;
+  --colour-badge-practice:#60a5fa40;
+
+  --colour-answer-btn-hover: #1a2a72;
+  --colour-border-hover:     #86c3ff;
+
+  --ring-bg: #232429;
+
+  /* mobile specific colour */
+  --colour-bg-mobile:  #232429;
+  --colour-answer-bg:  #003F5C;
+  --colour-letter-bg:  #86c3ff;
+  --colour-letter-txt: #002f87;
+  --ring-bg-mobile: #0f2067;
+
+  /* header spacer gradient */
   --header-bar-1:   #a72323;
   --header-bar-2:   #f09368;
   --header-bar-3:   #e5adad;
-  --header-badge:   #ff6b1a;
-  --badge-text:     #fff;
-  --badge-test:     #facc1540;
-  --badge-practice: #60a5fa40;
-  --radius-card:    16px;
-  --radius-btn:     10px;
 }
 
 /* ── Light mode ─────────────────────────────────────────── */
 [data-theme="light"] {
-  --bg-page:        #e8f4f8;
-  --bg-card:        #fff;
-  --bg-answer:      #dee3f0;
   --bg-hover:       #d9ddf3;
-  --bg-header-text: #001F52;
-  --color-correct:  #16a34a;
-  --color-wrong:    #dc2626;
-  --color-accent:   #86c3ff;
-  --color-text:     #0f2067;
-  --color-muted:    #295970;
-  --color-border:   #a7afda;
-  --color-heading:  #0f2067;
-  --color-subtitle: #2a4080;
   --color-question: #555;
-  --header-bar-1:   #a72323;
-  --header-bar-2:   #f09368;
-  --header-bar-3:   #e5adad;
-  --header-badge:   #ff6b1a;
-  --badge-text:     #fff;
-  --badge-test:     #bb9a18;
-  --badge-practice: #487cbd;
-  --radius-card:    16px;
-  --radius-btn:     10px;
+
+    /* theme specific colours */
+  --colour-bg:         #e8f4f8;
+  --colour-card:       #fff;
+  --colour-h1:         #001F52;
+  --colour-text:       #0f2067;
+  --colour-text-muted: #295970;
+  --colour-answer-btn: #dee3f0;
+  --colour-accent:     #86c3ff;
+  --colour-border:     #8891c7;
+
+  --colour-correct:    #16a34a;
+  --colour-wrong:      #dc2626;
+
+  --colour-answer-btn-hover: #f0f7ff;
+  --colour-border-hover:     #8891c7
+
+  --ring-bg: #295970;
+
+  /* mobile specific colour */
+  --colour-bg-mobile:  #fff;
+  --colour-answer-bg:  #dee3f0;
+  --colour-letter-bg:  #86c3ff;
+  --colour-letter-txt: #002f87;
+  --ring-bg-mobile: #8891c7;
 }
 
 [data-theme="light"] .app-header h1 {
-  color: var(--color-heading);
+  color: var(--colour-h1);
 }
 
 [data-theme="light"] .app-header .subtitle {
-  color: var(--color-subtitle);
+  color: var(--colour-text-muted);
 }
 
 /* ── Theme toggle button ─────────────────────────────────── */
@@ -95,18 +117,18 @@
   text-indent: -9999px;
   width: 52px;
   height: 28px;
-  background: #1C58BA;
+  background: var(--bg-blue);
   border-radius: 100px;
   display: flex;
   align-items: center;
   position: relative;
-  border: 2px solid #fff;
+  border: 2px solid white;
   transition: background 0.3s;
 }
 
 .theme-toggle-wrap label:after {
   content: '';
-  background: #fff;
+  background: white;
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -117,7 +139,7 @@
 }
 
 .theme-toggle-input:checked + label {
-  background: var(--color-accent);
+  background: var(--bg-cyan);
 }
 
 .theme-toggle-input:checked + label:after {
@@ -133,8 +155,8 @@ html {
 
 body {
   font-family: 'BritishGasBody','Helvetica','Arial', sans-serif;
-  background: var(--bg-page);
-  color: var(--color-text);
+  background: var(--colour-bg);
+  color: var(--colour-text);
   min-height: 100dvh;
 }
 
@@ -154,8 +176,8 @@ body {
 header {
   position: relative;
   width: 100%;
-  background: var(--color-accent);
-  color: var(--bg-header-text);
+  background: var(--bg-cyan);
+  color: var(--colour-h1);
   padding: 28px 24px 22px;
   text-align: center;
   overflow: hidden;
@@ -186,8 +208,8 @@ header .badge {
   margin: 4px auto;
   border-radius: 2px;
   width: 112px;
-  background: var(--header-badge);
-  color: var(--badge-text);
+  background: var(--colour-badge-header);
+  color: white;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 12px;
@@ -199,7 +221,7 @@ header p.subtitle {
   font-size: 14px;
   margin: 12px auto;
   font-weight: bold;
-  color: var(--bg-header-text);
+  color: var(--colour-h1);
 }
 
 /* ── Progress ────────────────────────────────────────────────────────────────── */
@@ -231,7 +253,7 @@ header p.subtitle {
 }
 
 .badge-practice {
-  background: var(--badge-practice);
+  background: var(--colour-badge-practice);
   color: var(--color-text);
 }
 
@@ -241,7 +263,7 @@ header p.subtitle {
 }
 
 .progress-track {
-  background: var(--color-border);
+  background: var(--colour-border);
   border-radius: 999px;
   height: 8px;
   overflow: hidden;
@@ -249,7 +271,7 @@ header p.subtitle {
 
 .progress-fill {
   height: 100%;
-  background: var(--color-accent);
+  background: var(--bg-cyan);
   border-radius: 999px;
   width: 0%;
   transition: width 0.35s ease;
@@ -257,7 +279,7 @@ header p.subtitle {
 
 /* ── Card — desktop (normal flow) ────────────────────────────────────────────── */
 .quiz-card {
-  background: var(--bg-card);
+  background: var(--colour-card);
   border-radius: var(--radius-card);
   padding: 28px 22px;
   width: calc(100% - 32px);
@@ -283,7 +305,7 @@ header p.subtitle {
   font-weight: 600;
   line-height: 1.45;
   margin-bottom: 22px;
-  color: var(--color-text);
+  color: var(--colour-text);
 }
 
 /* ── Answers ──────────────────────────────────────────────────────────────────── */
@@ -299,10 +321,10 @@ header p.subtitle {
   gap: 14px;
   width: 100%;
   padding: 18px 16px;
-  background: var(--bg-answer);
+  background: var(--colour-answer-btn);
   border: 2px solid transparent;
   border-radius: var(--radius-btn);
-  color: var(--color-text);
+  color: var(--colour-text);
   font-size: 16px;
   font-family: inherit;
   cursor: pointer;
@@ -313,8 +335,8 @@ header p.subtitle {
 }
 
 .answer-btn:hover:not(:disabled) {
-  background: var(--bg-hover);
-  border-color: var(--color-accent);
+  background: var(--colour-answer-btn-hover);
+  border-color: var(--colour-border);
   transform: translateX(4px);
 }
 
@@ -331,8 +353,8 @@ header p.subtitle {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: var(--color-border);
-  color: var(--color-muted);
+  background: var(--colour-border);
+  color: var(--colour-muted);
   font-size: 13px;
   font-weight: 700;
   display: flex;
@@ -347,33 +369,33 @@ header p.subtitle {
 
 /* ── Answer states ───────────────────────────────────────────────────────────── */
 .answer-btn.correct {
-  background: var(--bg-answer);
-  border-color: var(--color-correct);
+  background: var(--colour-answer-btn);
+  border-color: var(--colour-correct);
 }
 
 .answer-btn.correct .answer-letter {
-  background: var(--color-correct);
+  background: var(--colour-correct);
   color: #fff;
 }
 
 .answer-btn.wrong {
-  background: var(--bg-answer);
-  border-color: var(--color-wrong);
+  background: var(--colour-answer-btn);
+  border-color: var(--colour-wrong);
 }
 
 .answer-btn.wrong .answer-letter {
-  background: var(--color-wrong);
+  background: var(--colour-wrong);
   color: #fff;
 }
 
 /* Test mode: selected but unrevealed */
 .answer-btn.selected {
-  background: var(--bg-answer);
-  border-color: var(--color-muted);
+  background: var(--colour-answer-bg);
+  border-color: var(--colour-muted);
 }
 
 .answer-btn.selected .answer-letter {
-  background: var(--color-muted);
+  background: var(--colour-muted);
   color: #0f172a;
 }
 
@@ -402,7 +424,7 @@ header p.subtitle {
 .neutral-feedback {
   background: rgba(148, 163, 184, 0.75);
   color: var(--color-muted);
-  border-left: 6px solid var(--color-border);
+  border-left: 6px solid var(--colour-border);
 }
 
 /* ── Next button ─────────────────────────────────────────────────────────────── */
@@ -414,7 +436,7 @@ header p.subtitle {
   margin-top: 18px;
   width: 100%;
   padding: 14px;
-  background: var(--color-accent);
+  background: var(--bg-navy);
   border: none;
   border-radius: var(--radius-btn);
   color: #fff;
@@ -427,7 +449,7 @@ header p.subtitle {
   min-height: 48px;
 }
 
-.next-btn:hover { background: #2563eb; }
+.next-btn:hover { background: var(--bg-blue); }
 .next-btn:active { transform: scale(0.98); }
 
 /* ── Start screen ────────────────────────────────────────────────────────────── */
@@ -440,12 +462,12 @@ header p.subtitle {
 .start-title {
   font-size: 20px;
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--colour-text);
 }
 
 .start-desc {
   font-size: 14px;
-  color: var(--color-muted);
+  color: var(--colour-muted);
   line-height: 1.6;
   margin-top: -10px;
 }
@@ -464,10 +486,10 @@ header p.subtitle {
   align-items: center;
   width: 100%;
   padding: 18px 16px;
-  background: var(--bg-answer);
-  border: 2px solid var(--color-border);
+  background: var(--colour-answer-btn);
+  border: 2px solid var(--colour-border);
   border-radius: var(--radius-btn);
-  color: var(--color-text);
+  color: var(--colour-text);
   font-family: inherit;
   cursor: pointer;
   text-align: left;
@@ -475,10 +497,13 @@ header p.subtitle {
   -webkit-tap-highlight-color: transparent;
 }
 
-.mode-btn:hover { background: var(--bg-hover); }
+.mode-btn:hover { 
+  background: var(--colour-answer-btn-hover); 
+  transform: translateY(-3px);
+}
 .mode-btn:active { transform: scale(0.98); }
 
-.mode-practice:hover { border-color: var(--color-accent); }
+.mode-practice:hover { border-color: var(--colour-border-hover); }
 .mode-test:hover     { border-color: #facc15; }
 
 .mode-icon {
@@ -532,7 +557,7 @@ header p.subtitle {
 
 .ring-bg {
   fill: none;
-  stroke: #1b2138;
+  stroke: var(--ring-bg);
   stroke-width: 10;
 }
 
@@ -543,8 +568,8 @@ header p.subtitle {
   transition: stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.ring-pass { stroke: var(--color-correct); }
-.ring-fail { stroke: var(--color-wrong); }
+.ring-pass { stroke: var(--colour-correct); }
+.ring-fail { stroke: var(--colour-wrong); }
 
 .ring-label {
   position: absolute;
@@ -568,8 +593,8 @@ header p.subtitle {
   letter-spacing: 0.08em;
 }
 
-.verdict-pass { color: var(--color-correct); }
-.verdict-fail { color: var(--color-wrong); }
+.verdict-pass { color: var(--colour-correct); }
+.verdict-fail { color: var(--colour-wrong); }
 
 .result-detail {
   font-size: 18px;
@@ -578,38 +603,38 @@ header p.subtitle {
 
 .result-threshold {
   font-size: 13px;
-  color: var(--color-muted);
+  color: var(--colour-muted);
 }
 
 .perfect {
   font-size: 16px;
-  color: var(--color-correct);
+  color: var(--colour-correct);
 }
 
 /* ── Review section ──────────────────────────────────────────────────────────── */
 .review-section {
   width: 100%;
   margin-top: 8px;
-  border-top: 1px solid #7a8ee6;
+  border-top: 1px solid var(--colour-border);
   padding-top: 16px;
 }
 
 .review-heading {
   font-size: 14px;
   font-weight: 700;
-  color: var(--color-muted);
+  color: var(--colour-muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-bottom: 12px;
 }
 
 .review-item {
-  background: rgb(24, 24, 56);
-  color: #a3b5ff;
+  background: var(--colour-answer-btn);
+  color:  var(--colour-text);
   border-radius: 8px;
   padding: 12px 14px;
   margin-bottom: 10px;
-  border-left: 6px solid #606faf;
+  border-left: 6px solid var(--colour-border);
 }
 
 .review-question {
@@ -621,13 +646,15 @@ header p.subtitle {
 
 .review-wrong {
   font-size: 13px;
-  color: #ce1313;
+  color: var(--colour-wrong);
+  font-weight: bold;
   margin-bottom: 4px;
 }
 
 .review-correct {
   font-size: 13px;
-  color: #0cc550;
+  color: var(--colour-correct);
+  font-weight: bold;
 }
 
 /* ── Restart button ──────────────────────────────────────────────────────────── */
@@ -635,10 +662,10 @@ header p.subtitle {
   margin-top: 8px;
   width: 100%;
   padding: 14px;
-  background: transparent;
-  border: 1.5px solid var(--color-accent);
+  background: var(--colour-answer-btn);
+  border: none;
   border-radius: var(--radius-btn);
-  color: var(--color-accent);
+  color: var(--colour-accent);
   font-size: 16px;
   font-weight: 600;
   font-family: inherit;
@@ -648,7 +675,7 @@ header p.subtitle {
 }
 
 .restart-btn:hover {
-  background: rgba(59, 130, 246, 0.1);
+  background: var(--colour-answer-btn-hover);
 }
 
 /* ── Card — mobile (fixed to bottom) ─────────────────────────────────────────── */
@@ -656,6 +683,10 @@ header p.subtitle {
   .app-layout {
     /* leave room at top for header + progress */
     padding-bottom: 0;
+  }
+
+  body {
+    background: var(--colour-bg-mobile);
   }
 
   .quiz-card {
@@ -672,7 +703,8 @@ header p.subtitle {
     max-height: 80dvh;
     overflow-y: auto;
     padding: 18px 12px calc(env(safe-area-inset-bottom, 0px) + 16px);
-    box-shadow: 0 -4px 32px rgba(0,0,0,0.5);
+    box-shadow: none;
+    background: none;
   }
 
   #progressSection {
@@ -692,7 +724,25 @@ header p.subtitle {
   .answer-btn {
     font-size: 14px;
     padding: 12px 12px;
+    background: var(--colour-answer-bg);
     transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  }
+
+  .answer-letter {
+    background: var(--colour-letter-bg);
+    color: var(--colour-letter-txt);
+  }
+
+  .review-item {
+    background: var(--colour-answer-bg);
+  }
+
+  .ring-bg {
+    stroke: var(--ring-bg-mobile);
+  }
+
+  .restart-btn {
+    background: var(--colour-answer-bg);
   }
 
   .answers {
@@ -736,10 +786,10 @@ header p.subtitle {
   column-gap: 14px;
   width: 100%;
   padding: 18px 16px;
-  background: var(--bg-answer);
-  border: 2px solid var(--color-border);
+  background: var(--colour-answer-btn);
+  border: 2px solid var(--colour-border);
   border-radius: var(--radius-btn);
-  color: var(--color-text);
+  color: var(--colour-text);
   font-family: inherit;
   cursor: pointer;
   text-align: left;
@@ -748,8 +798,8 @@ header p.subtitle {
 }
 
 .quiz-card-btn:hover {
-  background: var(--bg-hover);
-  border-color: var(--color-accent);
+  background: var(--colour-answer-btn-hover);
+  border-color: var(--colour-accent);
   transform: translateY(-2px);
 }
 
@@ -773,7 +823,7 @@ header p.subtitle {
 
 .quiz-card-subtitle {
   font-size: 13px;
-  color: var(--color-muted);
+  color: var(--colour-muted);
 }
 
 /* ── Mode select back button ─────────────────────────────────────────────────── */
@@ -783,7 +833,7 @@ header p.subtitle {
   gap: 6px;
   background: none;
   border: none;
-  color: var(--color-muted);
+  color: var(--colour-muted);
   font-size: 14px;
   font-family: inherit;
   cursor: pointer;
@@ -792,19 +842,19 @@ header p.subtitle {
 }
 
 .back-btn:hover {
-  color: var(--color-accent);
+  color: var(--colour-accent);
 }
 
 .selected-quiz-label {
   font-size: 13px;
-  color: var(--color-muted);
+  color: var(--colour-muted);
   margin-bottom: 6px;
 }
 
 .selected-quiz-name {
   font-size: 20px;
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--colour-text);
   margin-bottom: 20px;
 }
 
