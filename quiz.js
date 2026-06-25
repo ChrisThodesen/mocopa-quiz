@@ -116,7 +116,44 @@ function feedbackHTML(prefix, q, fallback) {
   return `<span class="feedback-body">${body}</span>${ref}`;
 }
 
+const loadedGenerators = new Set();
+
+function loadGeneratorScript(src) {
+  if (loadedGenerators.has(src)) return Promise.resolve();
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = src;
+    script.onload = () => { loadedGenerators.add(src); resolve(); };
+    script.onerror = () => reject(new Error(`Failed to load generator script: ${src}`));
+    document.head.appendChild(script);
+  });
+}
+
+function getQuestionCount(mode) {
+  return mode === 'test' ? currentQuiz.testCount : currentQuiz.practiceCount;
+}
+
 function loadAndStart(mode) {
+  const gen = currentQuiz.generator;
+
+  if (gen) {
+    loadGeneratorScript(gen.script)
+      .then(() => {
+        const api = window[gen.global];
+        if (!api || typeof api.generateQuiz !== 'function') {
+          throw new Error(`Generator "${gen.global}" not found or missing generateQuiz()`);
+        }
+        const count = getQuestionCount(mode);
+        const questions = api.generateQuiz(count);
+        startQuiz(mode, questions);
+      })
+      .catch(err => {
+        console.error('Error loading generated quiz:', err);
+        alert('Could not generate quiz questions. Please try again.');
+      });
+    return;
+  }
+
   fetch(currentQuiz.file)
     .then(r => r.json())
     .then(questions => {

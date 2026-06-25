@@ -58,5 +58,28 @@
     "passmark": 80,
     "practiceCount": 12,
     "testCount": 18
+  },
+  {
+    "id": "ventilation",
+    "title": "Ventilation",
+    "subtitle": "Section 5 · Combustion & Cooling Air",
+    "icon": "🌬️",
+    "file": "./data/ventilation.json",
+    "passmark": 80,
+    "practiceCount": 12,
+    "testCount": 18
+  },
+  {
+    "id": "installation-purge-volumes",
+    "title": "Installation & Purge Volumes",
+    "subtitle": "Section 2 · Calculating IV & PV",
+    "icon": "🧮",
+    "generator": {
+      "script": "./generators/generateIVPV.js",
+      "global": "PurgeVolumeGenerator"
+    },
+    "passmark": 80,
+    "practiceCount": 10,
+    "testCount": 15
   }
 ]
