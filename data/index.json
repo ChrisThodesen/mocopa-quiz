@@ -10,16 +10,6 @@
     "testCount": 60
   },
   {
-    "id": "risk-classification",
-    "title": "AR / HR Risk Classification",
-    "subtitle": "Risk Classification Practice",
-    "icon": "⚠️",
-    "file": "./data/risk-classification.json",
-    "passmark": 80,
-    "practiceCount": 20,
-    "testCount": 30
-  },
-  {
     "id": "reestablish-supply",
     "title": "Re-establish a Gas Supply",
     "subtitle": "Section 1 · Restoring Supply Safely",
@@ -93,16 +83,16 @@
     "testCount": 20
   },
   {
-    "id": "unsafe-situations",
-    "title": "Unsafe Situations & Labels",
-    "subtitle": "Section 7 · ID/AR Classification & Procedures",
-    "icon": "⚠️",
-    "file": "./data/unsafe-situations.json",
-    "passmark": 80,
-    "practiceCount": 20,
-    "testCount": 30
+  "id": "unsafe-situations",
+  "title": "Unsafe Situations & Risk Classification",
+  "subtitle": "Section 7 · ID/AR, Table 1 & Labels",
+  "icon": "⚠️",
+  "file": "./data/unsafe-situations.json",
+  "passmark": 80,
+  "practiceCount": 30,
+  "testCount": 60
   },
-    {
+  {
     "id": "emergency-actions",
     "title": "Emergency Actions",
     "subtitle": "Section 8 · Gas Escapes & Incidents",
