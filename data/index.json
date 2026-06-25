@@ -16,8 +16,8 @@
     "icon": "⚠️",
     "file": "./data/risk-classification.json",
     "passmark": 80,
-    "practiceCount": 15,
-    "testCount": 35
+    "practiceCount": 20,
+    "testCount": 30
   },
   {
     "id": "reestablish-supply",
@@ -26,8 +26,8 @@
     "icon": "🔁",
     "file": "./data/reestablish-supply.json",
     "passmark": 80,
-    "practiceCount": 8,
-    "testCount": 12
+    "practiceCount": 20,
+    "testCount": 20
   },
   {
     "id": "tightness-testing",
@@ -36,38 +36,8 @@
     "icon": "🧪",
     "file": "./data/tightness-testing.json",
     "passmark": 80,
-    "practiceCount": 12,
-    "testCount": 32
-  },
-  {
-    "id": "pressures-gas-rates",
-    "title": "Pressures & Gas Rates",
-    "subtitle": "Section 3 · Working Pressure & Gas Rating",
-    "icon": "🎚️",
-    "file": "./data/pressures-gas-rates.json",
-    "passmark": 80,
-    "practiceCount": 10,
-    "testCount": 15
-  },
-  {
-    "id": "chimneys",
-    "title": "Chimneys",
-    "subtitle": "Section 4 · Flueing of Domestic Gas Appliances",
-    "icon": "💨",
-    "file": "./data/chimneys.json",
-    "passmark": 80,
-    "practiceCount": 12,
-    "testCount": 18
-  },
-  {
-    "id": "ventilation",
-    "title": "Ventilation",
-    "subtitle": "Section 5 · Combustion & Cooling Air",
-    "icon": "🌬️",
-    "file": "./data/ventilation.json",
-    "passmark": 80,
-    "practiceCount": 12,
-    "testCount": 18
+    "practiceCount": 20,
+    "testCount": 30
   },
   {
     "id": "installation-purge-volumes",
@@ -79,7 +49,67 @@
       "global": "PurgeVolumeGenerator"
     },
     "passmark": 80,
-    "practiceCount": 10,
-    "testCount": 15
+    "practiceCount": 20,
+    "testCount": 20
+  },
+  {
+    "id": "pressures-gas-rates",
+    "title": "Pressures & Gas Rates",
+    "subtitle": "Section 3 · Working Pressure & Gas Rating",
+    "icon": "🎚️",
+    "file": "./data/pressures-gas-rates.json",
+    "passmark": 80,
+    "practiceCount": 20,
+    "testCount": 20
+  },
+  {
+    "id": "chimneys",
+    "title": "Chimneys",
+    "subtitle": "Section 4 · Flueing of Domestic Gas Appliances",
+    "icon": "💨",
+    "file": "./data/chimneys.json",
+    "passmark": 80,
+    "practiceCount": 20,
+    "testCount": 20
+  },
+  {
+    "id": "ventilation",
+    "title": "Ventilation",
+    "subtitle": "Section 5 · Combustion & Cooling Air",
+    "icon": "🌬️",
+    "file": "./data/ventilation.json",
+    "passmark": 80,
+    "practiceCount": 20,
+    "testCount": 20
+  },
+  {
+    "id": "pipework",
+    "title": "Pipework",
+    "subtitle": "Section 6 · Sizing, Materials & Installation",
+    "icon": "🔧",
+    "file": "./data/pipework.json",
+    "passmark": 80,
+    "practiceCount": 20,
+    "testCount": 20
+  },
+  {
+    "id": "unsafe-situations",
+    "title": "Unsafe Situations & Labels",
+    "subtitle": "Section 7 · ID/AR Classification & Procedures",
+    "icon": "⚠️",
+    "file": "./data/unsafe-situations.json",
+    "passmark": 80,
+    "practiceCount": 20,
+    "testCount": 30
+  },
+    {
+    "id": "emergency-actions",
+    "title": "Emergency Actions",
+    "subtitle": "Section 8 · Gas Escapes & Incidents",
+    "icon": "🚨",
+    "file": "./data/emergency-actions.json",
+    "passmark": 80,
+    "practiceCount": 20,
+    "testCount": 20
   }
 ]
