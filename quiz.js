@@ -35,7 +35,8 @@ function prepareQuestions(questions, count) {
       question: q.question,
       answers: shuffled,
       correct: shuffled.indexOf(correctAnswer),
-      explanation: q.explanation || ''
+      explanation: q.explanation || '',
+      source: q.source || '',
     };
   });
   const shuffled = shuffle(prepared);
@@ -102,6 +103,17 @@ function showModeSelector() {
       </button>
     </div>
   `;
+}
+
+function feedbackHTML(prefix, q, fallback) {
+  let body = prefix;
+  if(q.explanation) body += ' ' + q.explanation;
+  if(fallback) body += ' ' + fallback;
+  console.log(q);
+  const ref = q.source
+    ? `<span class="feedback-source">📖 Guide ref: ${q.source}</span>`
+    : '';
+  return `<span class="feedback-body">${body}</span>${ref}`;
 }
 
 function loadAndStart(mode) {
@@ -220,10 +232,10 @@ function selectAnswer(button, index) {
 
     const feedback = document.getElementById("feedback");
     if (index === correctIndex) {
-      feedback.textContent = "Correct!";
+      feedback.innerHTML = feedbackHTML("Correct!",quiz[current]);
       feedback.className = "feedback correct-feedback";
     } else {
-      feedback.textContent = `Incorrect — the correct answer was: ${quiz[current].answers[correctIndex]}`;
+      feedback.innerHTML = feedbackHTML("Incorrect",quiz[current],`the correct answer was: ${quiz[current].answers[correctIndex]}`);
       feedback.className = "feedback wrong-feedback";
     }
     feedback.style.display = "block";

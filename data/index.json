@@ -18,5 +18,45 @@
     "passmark": 80,
     "practiceCount": 15,
     "testCount": 35
+  },
+  {
+    "id": "reestablish-supply",
+    "title": "Re-establish a Gas Supply",
+    "subtitle": "Section 1 · Restoring Supply Safely",
+    "icon": "🔁",
+    "file": "./data/reestablish-supply.json",
+    "passmark": 80,
+    "practiceCount": 8,
+    "testCount": 12
+  },
+  {
+    "id": "tightness-testing",
+    "title": "Tightness Testing",
+    "subtitle": "Section 2 · IGEM/UP/1B Procedure",
+    "icon": "🧪",
+    "file": "./data/tightness-testing.json",
+    "passmark": 80,
+    "practiceCount": 12,
+    "testCount": 32
+  },
+  {
+    "id": "pressures-gas-rates",
+    "title": "Pressures & Gas Rates",
+    "subtitle": "Section 3 · Working Pressure & Gas Rating",
+    "icon": "🎚️",
+    "file": "./data/pressures-gas-rates.json",
+    "passmark": 80,
+    "practiceCount": 10,
+    "testCount": 15
+  },
+  {
+    "id": "chimneys",
+    "title": "Chimneys",
+    "subtitle": "Section 4 · Flueing of Domestic Gas Appliances",
+    "icon": "💨",
+    "file": "./data/chimneys.json",
+    "passmark": 80,
+    "practiceCount": 12,
+    "testCount": 18
   }
 ]

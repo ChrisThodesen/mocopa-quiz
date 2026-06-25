@@ -407,12 +407,15 @@ header p.subtitle {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.4;
+  max-height: 9.5rem;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .correct-feedback {
   background: rgba(101, 230, 148, 0.75);
   color: #073f1b;
-  border-left: 6px solid #44835a;;
+  border-left: 6px solid #44835a;
 }
 
 .wrong-feedback {
@@ -425,6 +428,15 @@ header p.subtitle {
   background: rgba(148, 163, 184, 0.75);
   color: var(--color-muted);
   border-left: 6px solid var(--colour-border);
+}
+
+.feedback-source {
+  display: block;
+  margin-top: 6px;
+  font-size: 1em;
+  text-align: right;
+  font-weight: 600;
+  opacity: 0.72;
 }
 
 /* ── Next button ─────────────────────────────────────────────────────────────── */
