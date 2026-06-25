@@ -101,5 +101,15 @@
     "passmark": 80,
     "practiceCount": 20,
     "testCount": 20
+  },
+  {
+    "id": "combustion",
+    "title": "Combustion",
+    "subtitle": "Section 9 · Theory, Flames & Flue Gas Analysis",
+    "icon": "🔥",
+    "file": "./data/combustion.json",
+    "passmark": 80,
+    "practiceCount": 8,
+    "testCount": 15
   }
 ]
