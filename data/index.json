@@ -121,6 +121,15 @@
     "passmark": 80,
     "practiceCount": 15,
     "testCount": 20
+  },
+  {
+    "id": "legislation",
+    "title": "Legislation",
+    "subtitle": "Section 11 · Legislation",
+    "icon": "⚖️",
+    "file": "./data/legislation.json",
+    "passmark": 80,
+    "practiceCount": 20,
+    "testCount": 25
   }
-
 ]
