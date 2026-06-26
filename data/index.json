@@ -111,5 +111,16 @@
     "passmark": 80,
     "practiceCount": 8,
     "testCount": 15
+  },
+  {
+    "id": "gas-controls",
+    "title": "Gas Controls",
+    "subtitle": "Section 10 · Gas Controls",
+    "icon": "🎛️",
+    "file": "./data/gas-controls.json",
+    "passmark": 80,
+    "practiceCount": 15,
+    "testCount": 20
   }
+
 ]
