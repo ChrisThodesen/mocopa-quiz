@@ -57,6 +57,7 @@ def load_json(path: Path, result: Result):
 
 def validate_index_entry(entry, idx, root: Path, result: Result, seen_ids: set, question_counts: dict):
     label = entry.get("id", f"<entry #{idx}>")
+    source_required = entry.get("requireSourceAndExplanation",True)
 
     missing = REQUIRED_INDEX_KEYS - entry.keys()
     if missing:
@@ -104,7 +105,7 @@ def validate_index_entry(entry, idx, root: Path, result: Result, seen_ids: set, 
             return
 
         question_counts[label] = len(questions)
-        validate_question_bank(questions, file_rel, result)
+        validate_question_bank(questions, file_rel, source_required, result)
 
         for count_key in ("practiceCount", "testCount"):
             count_val = entry.get(count_key)
@@ -115,7 +116,7 @@ def validate_index_entry(entry, idx, root: Path, result: Result, seen_ids: set, 
                 )
 
 
-def validate_question_bank(questions, file_rel, result: Result):
+def validate_question_bank(questions, file_rel, source_required, result: Result):
     seen_question_text = {}
 
     for i, q in enumerate(questions):
@@ -154,9 +155,10 @@ def validate_question_bank(questions, file_rel, result: Result):
             else:
                 result.error(f"{loc}: 'correct'={correct} is out of range for {len(answers)} answers")
 
-        source = q.get("source")
-        if not isinstance(source, str) or not source.strip():
-            result.error(f"{loc}: 'source' must be a non-empty string")
+        if source_required:
+            source = q.get("source")
+            if not isinstance(source, str) or not source.strip():
+                result.error(f"{loc}: 'source' must be a non-empty string")
 
         explanation = q.get("explanation")
         if not isinstance(explanation, str) or not explanation.strip():
