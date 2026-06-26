@@ -171,5 +171,17 @@
     "passmark": 80,
     "practiceCount": 15,
     "testCount": 20
+  },
+  {
+    "id": "reacs-mock-exam",
+    "title": "Re-ACS Mock Exam",
+    "subtitle": "Re-ACS Mock Exam",
+    "icon": "🎯",
+    "file": "./data/bgsm-re-acs.json",
+    "passmark": 80,
+    "practiceCount": 20,
+    "testCount": 206
   }
+
+
 ]
