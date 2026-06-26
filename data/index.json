@@ -133,14 +133,33 @@
     "testCount": 25
   },
   {
-  "id": "heaters",
-  "title": "Heaters",
-  "subtitle": "Section 12 · Heaters",
-  "icon": "🔥",
-  "file": "./data/heaters.json",
-  "passmark": 80,
-  "practiceCount": 20,
-  "testCount": 30
-}
-
+    "id": "heaters",
+    "title": "Heaters",
+    "subtitle": "Section 12 · Heaters",
+    "icon": "🔥",
+    "file": "./data/heaters.json",
+    "passmark": 80,
+    "practiceCount": 20,
+    "testCount": 30
+  },
+  {
+    "id": "warm-air-heaters",
+    "title": "Warm Air Heaters",
+    "subtitle": "Section 13 · Warm Air Heaters",
+    "icon": "🌬️",
+    "file": "./data/warmair.json",
+    "passmark": 80,
+    "practiceCount": 20,
+    "testCount": 25
+  },
+  {
+    "id": "wet-central-heating",
+    "title": "Wet Central Heating",
+    "subtitle": "Section 14 · Wet Central Heating",
+    "icon": "🔥",
+    "file": "./data/wet-central-heating.json",
+    "passmark": 80,
+    "practiceCount": 20,
+    "testCount": 20
+  }
 ]
