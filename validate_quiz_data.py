@@ -19,7 +19,7 @@ import argparse
 from pathlib import Path
 
 REQUIRED_INDEX_KEYS = {"id", "title", "subtitle", "icon", "passmark", "practiceCount", "testCount"}
-REQUIRED_QUESTION_KEYS = {"question", "answers", "correct", "explanation"}
+REQUIRED_QUESTION_KEYS = {"question", "answers", "correct"}
 
 # Any data files not matching desired format
 KNOWN_EXCEPTIONS = {}
@@ -158,9 +158,9 @@ def validate_question_bank(questions, file_rel, source_required, result: Result)
             if not isinstance(source, str) or not source.strip():
                 result.error(f"{loc}: 'source' must be a non-empty string")
 
-        explanation = q.get("explanation")
-        if not isinstance(explanation, str) or not explanation.strip():
-            result.error(f"{loc}: 'explanation' must be a non-empty string")
+            explanation = q.get("explanation")
+            if not isinstance(explanation, str) or not explanation.strip():
+                result.error(f"{loc}: 'explanation' must be a non-empty string")
 
         # Duplicate question detection (exact text match) within the same file
         if isinstance(question_text, str):
