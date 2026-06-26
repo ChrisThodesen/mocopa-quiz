@@ -19,12 +19,10 @@ import argparse
 from pathlib import Path
 
 REQUIRED_INDEX_KEYS = {"id", "title", "subtitle", "icon", "passmark", "practiceCount", "testCount"}
-REQUIRED_QUESTION_KEYS = {"question", "answers", "correct", "explanation", "source"}
+REQUIRED_QUESTION_KEYS = {"question", "answers", "correct", "explanation"}
 
 # Any data files not matching desired format
-KNOWN_EXCEPTIONS = {
-    
-}
+KNOWN_EXCEPTIONS = {}
 
 
 class Result:
