@@ -7,7 +7,8 @@
     "file": "./data/mocopa.json",
     "passmark": 80,
     "practiceCount": 20,
-    "testCount": 60
+    "testCount": 60,
+    "requireSourceAndExplanation": false
   },
   {
     "id": "reestablish-supply",
@@ -16,8 +17,8 @@
     "icon": "🔁",
     "file": "./data/reestablish-supply.json",
     "passmark": 80,
-    "practiceCount": 20,
-    "testCount": 20
+    "practiceCount": 12,
+    "testCount": 12
   },
   {
     "id": "tightness-testing",

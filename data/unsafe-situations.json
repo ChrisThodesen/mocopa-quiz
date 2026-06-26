@@ -714,7 +714,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 1,
-    "explanation": "Situation 1.2: A gas installation that fails a tightness test is classified Immediately Dangerous (ID). Contact the Gas Emergency Contact Centre or LPG supplier."
+    "explanation": "Situation 1.2: A gas installation that fails a tightness test is classified Immediately Dangerous (ID). Contact the Gas Emergency Contact Centre or LPG supplier.",
+    "source":"S7-19"
   },
   {
     "question": "The gas installation passes a tightness test, but the customer reports a persistent smell of gas. What is the correct classification?",
@@ -723,7 +724,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 1,
-    "explanation": "Situation 1.2: Even where the installation passes a tightness test, a smell of gas is classified Immediately Dangerous (ID). Contact the Gas Emergency Contact Centre or LPG supplier."
+    "explanation": "Situation 1.2: Even where the installation passes a tightness test, a smell of gas is classified Immediately Dangerous (ID). Contact the Gas Emergency Contact Centre or LPG supplier.",
+    "source":"S7-19"
   },
   {
     "question": "You attend a property following a CO detector alarm activation. There is confirmed re-entry of products of combustion giving ambient CO levels of 12ppm in the building. What is the correct classification?",
@@ -732,7 +734,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 1,
-    "explanation": "Situation 1.4: Confirmed re-entry of products of combustion giving ambient CO levels of 10ppm or greater is classified Immediately Dangerous (ID). If anyone appears unwell, advise immediate medical attention."
+    "explanation": "Situation 1.4: Confirmed re-entry of products of combustion giving ambient CO levels of 10ppm or greater is classified Immediately Dangerous (ID). If anyone appears unwell, advise immediate medical attention.",
+    "source":"S7-19"
   },
   {
     "question": "You find visual signs of spillage of products of combustion from a flued appliance, with no evidence the problem has been corrected. No work is being carried out on the appliance. How should this be classified?",
@@ -741,7 +744,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 1,
-    "explanation": "Situation 1.5: Where there are visual signs of spillage or leakage of products of combustion from an appliance or flue, with no evidence the issue has been corrected, this is classified Immediately Dangerous (ID)."
+    "explanation": "Situation 1.5: Where there are visual signs of spillage or leakage of products of combustion from an appliance or flue, with no evidence the issue has been corrected, this is classified Immediately Dangerous (ID).",
+    "source":"S7-20"
   },
   {
     "question": "On inspection you find that a pressure regulator has not been installed at the primary meter. How should this be classified?",
@@ -750,7 +754,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 1,
-    "explanation": "Situation 2.1: A pressure regulator not installed at the primary meter, or a regulator installation not suitable for the supply, is classified Immediately Dangerous (ID). Notify the Gas Emergency Contact Centre."
+    "explanation": "Situation 2.1: A pressure regulator not installed at the primary meter, or a regulator installation not suitable for the supply, is classified Immediately Dangerous (ID). Notify the Gas Emergency Contact Centre.",
+    "source":"S7-20"
   },
   {
     "question": "You discover the gas pressure at the outlet of the primary meter installation is incorrect and is affecting the combustion stability of appliances in the property. What is the correct classification?",
@@ -759,7 +764,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 1,
-    "explanation": "Situation 2.2: Incorrect gas pressure at the outlet of the primary meter installation which affects the safe operation of any appliance is classified Immediately Dangerous (ID). Notify the Gas Emergency Contact Centre and inform the Gas Supplier."
+    "explanation": "Situation 2.2: Incorrect gas pressure at the outlet of the primary meter installation which affects the safe operation of any appliance is classified Immediately Dangerous (ID). Notify the Gas Emergency Contact Centre and inform the Gas Supplier.",
+    "source":"S7-20"
   },
   {
     "question": "You find a medium or higher pressure fed regulator relief valve that is discharging continually while gas is being used. How should this be classified?",
@@ -768,7 +774,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 1,
-    "explanation": "Situation 2.4: A medium or higher pressure fed regulator relief valve discharging continually while gas is being used is classified Immediately Dangerous (ID)."
+    "explanation": "Situation 2.4: A medium or higher pressure fed regulator relief valve discharging continually while gas is being used is classified Immediately Dangerous (ID).",
+    "source":"S7-20"
   },
   {
     "question": "You find a meter and regulator showing significant signs of mechanical damage. How should this be classified?",
@@ -777,7 +784,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 0,
-    "explanation": "Situation 2.5: A meter and/or regulator showing significant signs of damage — from a corrosive atmosphere, mechanical damage, or contact with electrical equipment — is classified At Risk (AR). Advise the responsible person to contact the Gas Supplier."
+    "explanation": "Situation 2.5: A meter and/or regulator showing significant signs of damage — from a corrosive atmosphere, mechanical damage, or contact with electrical equipment — is classified At Risk (AR). Advise the responsible person to contact the Gas Supplier.",
+    "source":"S7-20"
   },
   {
     "question": "You identify that there is a pathway for gas to enter the property from the meter box due to a damaged meter box. How should this be classified?",
@@ -786,7 +794,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 0,
-    "explanation": "Situation 2.8: A pathway for gas to enter a property from the meter box — such as a damaged box or an unsealed sleeve — is classified At Risk (AR). Where practical, seal any unsealed sleeve, or advise the responsible person that the meter box must be repaired."
+    "explanation": "Situation 2.8: A pathway for gas to enter a property from the meter box — such as a damaged box or an unsealed sleeve — is classified At Risk (AR). Where practical, seal any unsealed sleeve, or advise the responsible person that the meter box must be repaired.",
+    "source":"S7-21"
   },
   {
     "question": "You find pipework with an open end that is connected to the gas supply. What is the correct classification?",
@@ -795,7 +804,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 1,
-    "explanation": "Situation 3.1: Pipework with an open end connected to a gas supply is classified Immediately Dangerous (ID). All open ends must be sealed with an appropriate gas fitting."
+    "explanation": "Situation 3.1: Pipework with an open end connected to a gas supply is classified Immediately Dangerous (ID). All open ends must be sealed with an appropriate gas fitting.",
+    "source":"S7-21"
   },
   {
     "question": "You discover gas pipework and fittings made from plastic water pipe rather than approved gas fittings. What is the correct classification?",
@@ -804,7 +814,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 1,
-    "explanation": "Situation 3.2: Pipework and/or fittings of inappropriate material for the purpose — such as plastic water pipe or hose pipe — is classified Immediately Dangerous (ID). These situations pose a very high risk of a serious incident."
+    "explanation": "Situation 3.2: Pipework and/or fittings of inappropriate material for the purpose — such as plastic water pipe or hose pipe — is classified Immediately Dangerous (ID). These situations pose a very high risk of a serious incident.",
+    "source":"S7-21"
   },
   {
     "question": "In a non-emergency situation you find there is no handle fitted to the Emergency Control Valve (ECV), preventing operation. How should this be classified?",
@@ -813,7 +824,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 0,
-    "explanation": "Situation 3.5: In a non-emergency situation, restricted access or no handle on the ECV is classified At Risk (AR). Notify the responsible person that access to, and a means to operate the ECV is required by law."
+    "explanation": "Situation 3.5: In a non-emergency situation, restricted access or no handle on the ECV is classified At Risk (AR). Notify the responsible person that access to, and a means to operate the ECV is required by law.",
+    "source":"S7-22"
   },
   {
     "question": "You find that installation pipework is showing significant signs of corrosion and inadequate support, and the lack of support makes accidental damage highly foreseeable. How should this be classified?",
@@ -822,7 +834,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 0,
-    "explanation": "Situation 3.11: Pipework showing significant signs of damage from corrosion or mechanical damage, or where the position or lack of support makes damage highly foreseeable, is classified At Risk (AR)."
+    "explanation": "Situation 3.11: Pipework showing significant signs of damage from corrosion or mechanical damage, or where the position or lack of support makes damage highly foreseeable, is classified At Risk (AR).",
+    "source":"S7-22"
   },
   {
     "question": "You find gas pipework located within a cavity wall but not within a purpose-designed duct. How should this be classified?",
@@ -831,7 +844,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 0,
-    "explanation": "Situation 3.13: Gas pipework located within a cavity wall or void but not within a purpose-designed duct in accordance with appropriate standards is classified At Risk (AR). Note: this does not include un-sleeved pipework that passes directly across a cavity by the shortest route."
+    "explanation": "Situation 3.13: Gas pipework located within a cavity wall or void but not within a purpose-designed duct in accordance with appropriate standards is classified At Risk (AR). Note: this does not include un-sleeved pipework that passes directly across a cavity by the shortest route.",
+    "source":"S7-23"
   },
   {
     "question": "An open-flued appliance is installed in a room where the purpose-provided permanent combustion air supply is less than required. How should this be classified?",
@@ -840,7 +854,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 0,
-    "explanation": "Situation 4.1: Open-flued or flueless appliances in a room where the permanent combustion air supply is less than required are classified At Risk (AR). For existing installations, 90% or more of the ventilator requirement is considered acceptable provided the appliance is otherwise operating safely."
+    "explanation": "Situation 4.1: Open-flued or flueless appliances in a room where the permanent combustion air supply is less than required are classified At Risk (AR). For existing installations, 90% or more of the ventilator requirement is considered acceptable provided the appliance is otherwise operating safely.",
+    "source":"S7-24"
   },
   {
     "question": "You find that air supply ventilators for an open-flued appliance incorporate gauze mesh screens. How should this be classified?",
@@ -849,7 +864,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 0,
-    "explanation": "Situation 4.3: Air supply ventilators for open-flued or flueless appliances which incorporate gauzes, fly screens, or are closable are classified At Risk (AR). Note: pest control mesh in compliant catering installations may not be a risk if clean and compliant."
+    "explanation": "Situation 4.3: Air supply ventilators for open-flued or flueless appliances which incorporate gauzes, fly screens, or are closable are classified At Risk (AR). Note: pest control mesh in compliant catering installations may not be a risk if clean and compliant.",
+    "source":"S7-24"
   },
   {
     "question": "You find installation pipework located within an unventilated duct or void. What is the correct classification?",
@@ -858,7 +874,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 0,
-    "explanation": "Situation 4.9: Installation pipework located within an unventilated duct or void is classified At Risk (AR)."
+    "explanation": "Situation 4.9: Installation pipework located within an unventilated duct or void is classified At Risk (AR).",
+    "source":"S7-25"
   },
   {
     "question": "You attend a property where an open-flued appliance is showing signs of distress and the clearances around it do not comply with the manufacturer's minimum requirements. How should this be classified?",
@@ -867,7 +884,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 1,
-    "explanation": "Situation 5.1: Where clearances around an open-flued appliance do not comply with manufacturer's minimum requirements and the appliance is showing signs of distress, this is classified Immediately Dangerous (ID). Where there are no signs of distress, the classification is At Risk (AR)."
+    "explanation": "Situation 5.1: Where clearances around an open-flued appliance do not comply with manufacturer's minimum requirements and the appliance is showing signs of distress, this is classified Immediately Dangerous (ID). Where there are no signs of distress, the classification is At Risk (AR).",
+    "source":"S7-25"
   },
   {
     "question": "You find a manual chimney damper in place on a domestic open-flued appliance and it is not secured in the open position. How should this be classified?",
@@ -876,7 +894,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 0,
-    "explanation": "Situation 5.6: A manual damper in place and not secured in the open position on a domestic appliance is classified At Risk (AR)."
+    "explanation": "Situation 5.6: A manual damper in place and not secured in the open position on a domestic appliance is classified At Risk (AR).",
+    "source":"S7-26"
   },
   {
     "question": "A room-sealed appliance's flue is found to be terminating into a conservatory. How should this be classified?",
@@ -885,7 +904,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 1,
-    "explanation": "Situation 6.1: A chimney or flue terminating into an internal space such as a conservatory is classified Immediately Dangerous (ID)."
+    "explanation": "Situation 6.1: A chimney or flue terminating into an internal space such as a conservatory is classified Immediately Dangerous (ID).",
+    "source":"S7-27"
   },
   {
     "question": "You find evidence of leakage of products of combustion from a room-sealed chimney system. How should this be classified?",
@@ -894,7 +914,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 1,
-    "explanation": "Situation 6.2: Leakage of products of combustion from a room-sealed chimney system — including evidence of leakage from the appliance or condensate air break — is classified Immediately Dangerous (ID)."
+    "explanation": "Situation 6.2: Leakage of products of combustion from a room-sealed chimney system — including evidence of leakage from the appliance or condensate air break — is classified Immediately Dangerous (ID).",
+    "source":"S7-27"
   },
   {
     "question": "You find a room-sealed chimney/flue system that is inadequately supported and shows signs that movement could cause a breach of integrity. How should this be classified?",
@@ -903,7 +924,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 0,
-    "explanation": "Situation 6.5: Room-sealed chimney/flue systems which are damaged, insecure, inadequately supported, or using incorrect jointing methods to such an extent that may cause them to become unsafe or cause a breach of integrity are classified At Risk (AR)."
+    "explanation": "Situation 6.5: Room-sealed chimney/flue systems which are damaged, insecure, inadequately supported, or using incorrect jointing methods to such an extent that may cause them to become unsafe or cause a breach of integrity are classified At Risk (AR).",
+    "source":"S7-27"
   },
   {
     "question": "You find a flued appliance that has not been connected to a flue at all. How should this be classified?",
@@ -912,7 +934,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 1,
-    "explanation": "Situation 7.1: An appliance that should be flued but is not flued is classified Immediately Dangerous (ID)."
+    "explanation": "Situation 7.1: An appliance that should be flued but is not flued is classified Immediately Dangerous (ID).",
+    "source":"S7-28"
   },
   {
     "question": "On a room-sealed appliance you find the flue gas analysis sample point cap is missing, but there is no evidence of leakage of products of combustion. How should this be classified?",
@@ -921,7 +944,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 1,
-    "explanation": "Situation 7.2: A missing or damaged flue gas analysis sample point cap on a room-sealed appliance is classified Immediately Dangerous (ID), regardless of whether there is evidence of leakage of products of combustion."
+    "explanation": "Situation 7.2: A missing or damaged flue gas analysis sample point cap on a room-sealed appliance is classified Immediately Dangerous (ID), regardless of whether there is evidence of leakage of products of combustion.",
+    "source":"S7-28"
   },
   {
     "question": "You find that the flame supervision device on an appliance is inoperative. How should this be classified?",
@@ -930,7 +954,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 1,
-    "explanation": "Situation 7.4: Appliance gas controls and safety devices that affect the safe operation of an appliance — including flame supervision devices (FSDs) — that are inoperative, failing to danger, or disabled are classified Immediately Dangerous (ID)."
+    "explanation": "Situation 7.4: Appliance gas controls and safety devices that affect the safe operation of an appliance — including flame supervision devices (FSDs) — that are inoperative, failing to danger, or disabled are classified Immediately Dangerous (ID).",
+    "source":"S7-28"
   },
   {
     "question": "You find a flueless appliance installed in a bathroom containing a shower. How should this be classified?",
@@ -939,7 +964,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 1,
-    "explanation": "Situation 7.5: A flueless or non-room-sealed appliance installed in a room containing a bath or shower — including cookers — is classified Immediately Dangerous (ID)."
+    "explanation": "Situation 7.5: A flueless or non-room-sealed appliance installed in a room containing a bath or shower — including cookers — is classified Immediately Dangerous (ID).",
+    "source":"S7-28"
   },
   {
     "question": "An unsatisfactory combustion reading is obtained from a flued appliance using a calibrated electronic flue gas analyser. There is no evidence of spillage. How should this be classified?",
@@ -948,7 +974,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 0,
-    "explanation": "Situation 7.6: Failure to achieve satisfactory combustion readings from a flued appliance is classified At Risk (AR), provided there is no spillage or leakage evident. If spillage or leakage is evident, classify as Immediately Dangerous (ID)."
+    "explanation": "Situation 7.6: Failure to achieve satisfactory combustion readings from a flued appliance is classified At Risk (AR), provided there is no spillage or leakage evident. If spillage or leakage is evident, classify as Immediately Dangerous (ID).",
+    "source":"S7-28"
   },
   {
     "question": "You find a customer using a patio heater indoors. How should this be classified?",
@@ -957,7 +984,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 0,
-    "explanation": "Situation 7.9: Use of an appliance indoors that is designed for outdoor use only is classified At Risk (AR). Where permission is obtained, remove the appliance to outside. Use of BBQs and patio heaters indoors has resulted in numerous fatalities."
+    "explanation": "Situation 7.9: Use of an appliance indoors that is designed for outdoor use only is classified At Risk (AR). Where permission is obtained, remove the appliance to outside. Use of BBQs and patio heaters indoors has resulted in numerous fatalities.",
+    "source":"S7-29"
   },
   {
     "question": "You find a flueless instantaneous water heater that does not have a built-in atmosphere sensing device (ASD). How should this be classified?",
@@ -966,7 +994,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 0,
-    "explanation": "Situation 8.1: A flueless or open-flued instantaneous water heating appliance without a built-in atmosphere-sensing device (ASD) is classified At Risk (AR)."
+    "explanation": "Situation 8.1: A flueless or open-flued instantaneous water heating appliance without a built-in atmosphere-sensing device (ASD) is classified At Risk (AR).",
+    "source":"S7-29"
   },
   {
     "question": "You find a flueless water heating appliance supplying hot water outlets in a different room from the appliance itself. How should this be classified?",
@@ -975,7 +1004,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 0,
-    "explanation": "Situation 8.3: A flueless water heating appliance supplying hot water outlets not in the same room or space as the appliance is classified At Risk (AR)."
+    "explanation": "Situation 8.3: A flueless water heating appliance supplying hot water outlets not in the same room or space as the appliance is classified At Risk (AR).",
+    "source":"S7-29"
   },
   {
     "question": "An LPG bulk storage vessel is found to be located within a building. How should this be classified?",
@@ -984,7 +1014,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 1,
-    "explanation": "Situation 12.1: An LPG bulk storage vessel located within a building is classified Immediately Dangerous (ID)."
+    "explanation": "Situation 12.1: An LPG bulk storage vessel located within a building is classified Immediately Dangerous (ID).",
+    "source":"S7-31"
   },
   {
     "question": "An LPG bulk storage vessel is found without a pressure relief valve fitted. How should this be classified?",
@@ -993,7 +1024,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 1,
-    "explanation": "Situation 12.2: An LPG bulk storage vessel without a pressure relief valve is classified Immediately Dangerous (ID)."
+    "explanation": "Situation 12.2: An LPG bulk storage vessel without a pressure relief valve is classified Immediately Dangerous (ID).",
+    "source":"S7-31"
   },
   {
     "question": "An LPG bulk storage vessel is found to be too close to a fixed ignition source. How should this be classified?",
@@ -1002,7 +1034,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 0,
-    "explanation": "Situation 12.6: An LPG bulk storage vessel too close to a fixed ignition source is classified At Risk (AR). Inform the gas user/responsible person and the Gas Supplier. Note: turning off will NOT remove the risk and a 'Danger Do Not Use' label is NOT to be used."
+    "explanation": "Situation 12.6: An LPG bulk storage vessel too close to a fixed ignition source is classified At Risk (AR). Inform the gas user/responsible person and the Gas Supplier. Note: turning off will NOT remove the risk and a 'Danger Do Not Use' label is NOT to be used.",
+    "source":"S7-31"
   },
   {
     "question": "An LPG cylinder is found stored in the basement of a property. How should this be classified?",
@@ -1011,7 +1044,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 0,
-    "explanation": "Situation 13.2: LPG cylinders or cartridges stored in a basement are classified At Risk (AR). Advise the gas user/responsible person to move the cylinder. Inform the gas supplier if the customer refuses."
+    "explanation": "Situation 13.2: LPG cylinders or cartridges stored in a basement are classified At Risk (AR). Advise the gas user/responsible person to move the cylinder. Inform the gas supplier if the customer refuses.",
+    "source":"S7-32"
   },
   {
     "question": "You find a vapour off-take LPG cylinder with no regulator fitted. How should this be classified?",
@@ -1020,7 +1054,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 1,
-    "explanation": "Situation 13.1: A vapour off-take cylinder with no regulator fitted is classified Immediately Dangerous (ID)."
+    "explanation": "Situation 13.1: A vapour off-take cylinder with no regulator fitted is classified Immediately Dangerous (ID).",
+    "source":"S7-32"
   },
   {
     "question": "During a commercial catering visit you find a gas-fired appliance with an enclosed burner and no flame supervision device (FSD) fitted. How should this be classified?",
@@ -1029,7 +1064,8 @@
       "Immediately Dangerous (ID) — cap off supply"
     ],
     "correct": 0,
-    "explanation": "Situation 15.2: A commercial catering appliance with an enclosed burner and no flame supervision device (FSD) is classified At Risk (AR). This applies to appliances not originally fitted with FSDs — for appliances originally fitted with FSDs that are now inoperative, refer to Situation 7.4 which is ID."
+    "explanation": "Situation 15.2: A commercial catering appliance with an enclosed burner and no flame supervision device (FSD) is classified At Risk (AR). This applies to appliances not originally fitted with FSDs — for appliances originally fitted with FSDs that are now inoperative, refer to Situation 7.4 which is ID.",
+    "source":"S7-34"
   },
   {
     "question": "You attend an LPG property and find a gas escape coming from the bulk storage vessel/cylinder installation itself. How should this be classified?",
