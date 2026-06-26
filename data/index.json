@@ -12,7 +12,7 @@
   {
     "id": "reestablish-supply",
     "title": "Re-establish a Gas Supply",
-    "subtitle": "Section 1 · Restoring Supply Safely",
+    "subtitle": "Section 1 · Re-establish a Gas Supply",
     "icon": "🔁",
     "file": "./data/reestablish-supply.json",
     "passmark": 80,
@@ -22,7 +22,7 @@
   {
     "id": "tightness-testing",
     "title": "Tightness Testing",
-    "subtitle": "Section 2 · IGEM/UP/1B Procedure",
+    "subtitle": "Section 2 · Tightness Testing",
     "icon": "🧪",
     "file": "./data/tightness-testing.json",
     "passmark": 80,
@@ -45,7 +45,7 @@
   {
     "id": "pressures-gas-rates",
     "title": "Pressures & Gas Rates",
-    "subtitle": "Section 3 · Working Pressure & Gas Rating",
+    "subtitle": "Section 3 · Pressures & Gas Rates",
     "icon": "🎚️",
     "file": "./data/pressures-gas-rates.json",
     "passmark": 80,
@@ -55,7 +55,7 @@
   {
     "id": "chimneys",
     "title": "Chimneys",
-    "subtitle": "Section 4 · Flueing of Domestic Gas Appliances",
+    "subtitle": "Section 4 · Chimneys",
     "icon": "💨",
     "file": "./data/chimneys.json",
     "passmark": 80,
@@ -65,7 +65,7 @@
   {
     "id": "ventilation",
     "title": "Ventilation",
-    "subtitle": "Section 5 · Combustion & Cooling Air",
+    "subtitle": "Section 5 · Ventilation",
     "icon": "🌬️",
     "file": "./data/ventilation.json",
     "passmark": 80,
@@ -75,7 +75,7 @@
   {
     "id": "pipework",
     "title": "Pipework",
-    "subtitle": "Section 6 · Sizing, Materials & Installation",
+    "subtitle": "Section 6 · Pipework",
     "icon": "🔧",
     "file": "./data/pipework.json",
     "passmark": 80,
@@ -85,7 +85,7 @@
   {
   "id": "unsafe-situations",
   "title": "Unsafe Situations & Risk Classification",
-  "subtitle": "Section 7 · ID/AR, Table 1 & Labels",
+  "subtitle": "Section 7 · Unsafe Situations/Labels",
   "icon": "⚠️",
   "file": "./data/unsafe-situations.json",
   "passmark": 80,
@@ -95,7 +95,7 @@
   {
     "id": "emergency-actions",
     "title": "Emergency Actions",
-    "subtitle": "Section 8 · Gas Escapes & Incidents",
+    "subtitle": "Section 8 · Emergency Actions",
     "icon": "🚨",
     "file": "./data/emergency-actions.json",
     "passmark": 80,
@@ -105,7 +105,7 @@
   {
     "id": "combustion",
     "title": "Combustion",
-    "subtitle": "Section 9 · Theory, Flames & Flue Gas Analysis",
+    "subtitle": "Section 9 · Combustion",
     "icon": "🔥",
     "file": "./data/combustion.json",
     "passmark": 80,
