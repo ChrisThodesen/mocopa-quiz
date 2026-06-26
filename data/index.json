@@ -161,5 +161,15 @@
     "passmark": 80,
     "practiceCount": 20,
     "testCount": 20
+  },
+  {
+    "id": "water-heaters",
+    "title": "Water Heaters",
+    "subtitle": "Section 15 · Water Heaters",
+    "icon": "🚿",
+    "file": "./data/water-heaters.json",
+    "passmark": 80,
+    "practiceCount": 15,
+    "testCount": 20
   }
 ]
