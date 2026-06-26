@@ -1,3 +1,10 @@
+/** Quiz.js 
+ * Main javascript file for the British Gas Smart Metering Apprenticeship test app.
+ * 
+ * Author: Chris Thodesen
+ * For any questions or support please contact: christopherjames.thodesen@britishgas.co.uk
+*/
+
 // ── State ─────────────────────────────────────────────────────────────────────
 let quizRegistry = [];
 let currentQuiz = null;
@@ -202,8 +209,8 @@ function renderQuestion() {
 
   card.innerHTML = `
     <p class="question-text">${q.question}</p>
-    <div class="answers" id="answers"></div>
-    <div class="feedback" id="feedback" style="display:none"></div>
+    <div class="answers" id="answers" role="radiogroup"></div>
+    <div class="feedback" id="feedback" style="display:none" aria-live="polite" aria-atomic="true"></div>
     <button class="next-btn" id="nextBtn" style="display:none" onclick="nextQuestion()">
       ${current < quiz.length - 1 ? 'Next question &#8594;' : 'See results'}
     </button>
@@ -213,6 +220,8 @@ function renderQuestion() {
   q.answers.forEach((answer, i) => {
     const btn = document.createElement('button');
     btn.className = 'answer-btn';
+    btn.setAttribute('role','radio');
+    btn.setAttribute('aria-checked',"false");
     btn.innerHTML = `
       <span class="answer-letter">${String.fromCharCode(65 + i)}</span>
       <span class="answer-text">${answer}</span>
@@ -226,6 +235,7 @@ function selectAnswer(button, index) {
   if(!testMode) {
     if (answered) return;
     answered = true;
+    button.setAttribute('aria-checked',"true");
   }
 
   const correctIndex = quiz[current].correct;
@@ -250,8 +260,10 @@ function selectAnswer(button, index) {
     // Test mode: just mark the selected button neutrally, no reveal
     buttons.forEach((btn,i) =>{
       btn.classList.remove("selected");
+      button.setAttribute('aria-checked',"false");
       if(i === index) {
         btn.classList.add("selected");
+        button.setAttribute('aria-checked',"true");
       } 
     });
 

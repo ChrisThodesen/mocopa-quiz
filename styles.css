@@ -51,8 +51,8 @@
 
 /* ── Light mode ─────────────────────────────────────────── */
 [data-theme="light"] {
-  --bg-hover:       #d9ddf3;
-  --color-question: #555;
+  /*--bg-hover:       #d9ddf3;*/
+  --colour-question: #555;
 
     /* theme specific colours */
   --colour-bg:         #e8f4f8;
@@ -68,7 +68,7 @@
   --colour-wrong:      #dc2626;
 
   --colour-answer-btn-hover: #f0f7ff;
-  --colour-border-hover:     #8891c7
+  --colour-border-hover:     #8891c7;
 
   --ring-bg: #295970;
 
@@ -240,7 +240,7 @@ header p.subtitle {
 
 .progress-label {
   font-size: 14px;
-  color: var(--color-question);
+  color: var(--colour-question);
 }
 
 .mode-badge {
@@ -254,12 +254,12 @@ header p.subtitle {
 
 .badge-practice {
   background: var(--colour-badge-practice);
-  color: var(--color-text);
+  color: var(--colour-text);
 }
 
 .badge-test {
-  background: var(--badge-test);
-  color: var(--color-text);
+  background: var(--colour-badge-test);
+  color: var(--colour-text);
 }
 
 .progress-track {
@@ -354,7 +354,7 @@ header p.subtitle {
   height: 30px;
   border-radius: 50%;
   background: var(--colour-border);
-  color: var(--colour-muted);
+  color: var(--colour-text-muted);
   font-size: 13px;
   font-weight: 700;
   display: flex;
@@ -391,11 +391,11 @@ header p.subtitle {
 /* Test mode: selected but unrevealed */
 .answer-btn.selected {
   background: var(--colour-answer-bg);
-  border-color: var(--colour-muted);
+  border-color: var(--colour-text-muted);
 }
 
 .answer-btn.selected .answer-letter {
-  background: var(--colour-muted);
+  background: var(--colour-text-muted);
   color: #0f172a;
 }
 
@@ -426,7 +426,7 @@ header p.subtitle {
 
 .neutral-feedback {
   background: rgba(148, 163, 184, 0.75);
-  color: var(--color-muted);
+  color: var(--colour-text-muted);
   border-left: 6px solid var(--colour-border);
 }
 
@@ -479,7 +479,7 @@ header p.subtitle {
 
 .start-desc {
   font-size: 14px;
-  color: var(--colour-muted);
+  color: var(--colour-text-muted);
   line-height: 1.6;
   margin-top: -10px;
 }
@@ -534,7 +534,7 @@ header p.subtitle {
 
 .mode-hint {
   font-size: 13px;
-  color: var(--color-muted);
+  color: var(--colour-text-muted);
   margin-top: 3px;
 }
 
@@ -551,7 +551,7 @@ header p.subtitle {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-muted);
+  color: var(--colour-text-muted);
 }
 
 .result-score-ring {
@@ -615,7 +615,7 @@ header p.subtitle {
 
 .result-threshold {
   font-size: 13px;
-  color: var(--colour-muted);
+  color: var(--colour-text-muted);
 }
 
 .perfect {
@@ -634,7 +634,7 @@ header p.subtitle {
 .review-heading {
   font-size: 14px;
   font-weight: 700;
-  color: var(--colour-muted);
+  color: var(--colour-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-bottom: 12px;
@@ -774,13 +774,13 @@ header p.subtitle {
 .quiz-select-title {
   font-size: 20px;
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--colour-text);
   margin-bottom: 6px;
 }
 
 .quiz-select-desc {
   font-size: 14px;
-  color: var(--color-muted);
+  color: var(--colour-text-muted);
   line-height: 1.5;
   margin-bottom: 20px;
 }
@@ -835,7 +835,7 @@ header p.subtitle {
 
 .quiz-card-subtitle {
   font-size: 13px;
-  color: var(--colour-muted);
+  color: var(--colour-text-muted);
 }
 
 /* ── Mode select back button ─────────────────────────────────────────────────── */
@@ -845,7 +845,7 @@ header p.subtitle {
   gap: 6px;
   background: none;
   border: none;
-  color: var(--colour-muted);
+  color: var(--colour-text-muted);
   font-size: 14px;
   font-family: inherit;
   cursor: pointer;
@@ -859,7 +859,7 @@ header p.subtitle {
 
 .selected-quiz-label {
   font-size: 13px;
-  color: var(--colour-muted);
+  color: var(--colour-text-muted);
   margin-bottom: 6px;
 }
 
