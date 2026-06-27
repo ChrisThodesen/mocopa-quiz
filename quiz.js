@@ -1,10 +1,9 @@
-/** Quiz.js 
- * Main javascript file for the British Gas Smart Metering Apprenticeship test app.
- * 
- * Author: Chris Thodesen
- * For any questions or support please contact: christopherjames.thodesen@britishgas.co.uk
+/** 
+ * @fileoverview Main JavaScript file for the British Gas Smart Metering
+ * Apprenticeship quiz app. Handles quiz selection, question rendering,
+ * scoring, and results display.
+ * @author Chris Thodesen <christopherjames.thodesen@britishgas.co.uk>
 */
-
 // ── State ─────────────────────────────────────────────────────────────────────
 let quizRegistry = [];
 let currentQuiz = null;
@@ -222,20 +221,51 @@ function renderQuestion() {
     btn.className = 'answer-btn';
     btn.setAttribute('role','radio');
     btn.setAttribute('aria-checked',"false");
+    btn.setAttribute('tabindex',i === 0 ? '0' : '-1');
     btn.innerHTML = `
       <span class="answer-letter">${String.fromCharCode(65 + i)}</span>
       <span class="answer-text">${answer}</span>
     `;
     btn.addEventListener('click', () => selectAnswer(btn, i));
+    btn.addEventListener('keydown', (e) => handleAnswerKeydown(e,i));
     answersDiv.appendChild(btn);
   });
+}
+
+function handleAnswerKeydown( e, index ) {
+  const buttons = Array.from(document.querySelectorAll('.answer-btn'));
+  const count = buttons.length;
+
+  let targetIndex = null;
+
+  switch(e.key) {
+      case 'ArrowDown':
+      case 'ArrowRight':
+        targetIndex = (index + 1) % count;
+      break;
+      case 'ArrowUp':
+      case 'ArrowLeft':
+        targetIndex = (index - 1 + count) % count;
+      break;
+      default: return; // Don't intercept Tab, Shift+Tab, Enter/Space or any other key.
+  }
+
+  e.preventDefault();
+  moveRovingFocus(buttons, targetIndex);
+  selectAnswer(buttons[targetIndex], targetIndex);
+}
+
+function moveRovingFocus(buttons, targetIndex) {
+  buttons.forEach((btn, i) => {
+    btn.setAttribute('tabindex', i === targetIndex ? '0' : '-1');
+  });
+  buttons[targetIndex].focus();
 }
 
 function selectAnswer(button, index) {
   if(!testMode) {
     if (answered) return;
     answered = true;
-    button.setAttribute('aria-checked',"true");
   }
 
   const correctIndex = quiz[current].correct;
@@ -260,10 +290,11 @@ function selectAnswer(button, index) {
     // Test mode: just mark the selected button neutrally, no reveal
     buttons.forEach((btn,i) =>{
       btn.classList.remove("selected");
-      button.setAttribute('aria-checked',"false");
+      btn.setAttribute('aria-checked',"false");
+      btn.setAttribute('tabindex', i === index ? '0' : '-1');
       if(i === index) {
         btn.classList.add("selected");
-        button.setAttribute('aria-checked',"true");
+        btn.setAttribute('aria-checked',"true");
       } 
     });
 
@@ -275,8 +306,10 @@ function selectAnswer(button, index) {
     // Practice mode: reveal correct/wrong immediately
     buttons.forEach((btn, i) => {
       btn.disabled = true;
+      btn.setAttribute('tabindex', i === index ? '0' : '-1');
       if (i === correctIndex) btn.classList.add("correct","anim-correct");
       else if (i === index) btn.classList.add("wrong","anim-wrong");
+      btn.setAttribute('aria-checked', i === index ? "true" : "false");
     });
 
     const feedback = document.getElementById("feedback");
