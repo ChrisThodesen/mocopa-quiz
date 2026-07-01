@@ -182,7 +182,15 @@
     "passmark": 80,
     "practiceCount": 20,
     "testCount": 206
+  },
+  {
+    "id": "acs-core-knowledge",
+    "title": "ACS Core Knowledge",
+    "subtitle": "Essential Facts · Know These Off By Heart",
+    "icon": "🧠",
+    "file": "./data/acs-core-knowledge.json",
+    "passmark": 80,
+    "practiceCount": 10,
+    "testCount": 20
   }
-
-
 ]
